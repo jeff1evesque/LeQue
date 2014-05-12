@@ -1,3 +1,5 @@
+<?php
+
 /**
  * main.php
  *
@@ -6,8 +8,6 @@
  *
  * This file calls the python script to initiate the microphone and begin recording audio, and analyzing input stream.
  */
-
-<?php 
 
 $command = escapeshellcmd('/python_scripts/audio_analyzer.py');
 $output = shell_exec($command);
