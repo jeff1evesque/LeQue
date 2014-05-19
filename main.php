@@ -62,7 +62,7 @@ echo $output;
         <div>Upload status: <span id='upload_status'></span></div>
       </div>  <!-- Closes <div class='details'> -->
 
-      <form id='uploadForm' name='uploadForm' action='upload.php'>
+      <form id='uploadForm' name='uploadForm' action='php/upload.php'>
         <input name='authenticity_token' value='xxxxx' type='hidden'>
         <input name='upload_file[parent_id]' value='1' type='hidden'>
         <input name='format' value='json' type='hidden'>
