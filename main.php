@@ -23,6 +23,8 @@ echo $output;
     <script type='text/javascript' src='js/recorder_control.js'></script>
     <script type='text/javascript' src='js/recorder_attributes.js'></script>
     <script type='text/javascript' src='js/recorder_initialize.js'></script>
+
+    <link rel='stylesheet' type='text/css' href='css/main.css'>
   </head>
 
   <body>
