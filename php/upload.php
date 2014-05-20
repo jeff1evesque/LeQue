@@ -1,6 +1,6 @@
 <?php
 
-  $save_folder = dirname(dirname(__FILE__)) . '/audio';
+  $save_folder = dirname(dirname(__FILE__)) . '/audio/recording';
   if(! file_exists($save_folder)) {
     if(! mkdir($save_folder)) {
       die("failed to create save folder $save_folder");
