@@ -1,6 +1,6 @@
 #!/bin/bash
 
-inotifywait -m ../audio -e create -e moved_to -e modify |
+inotifywait -m ../audio/recording -e create -e moved_to -e modify |
   while read path action file; do
 
     # do something with the file
