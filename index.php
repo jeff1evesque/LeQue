@@ -76,8 +76,8 @@ echo $output;
           <li>
             <label for='rate'>Rate</label>
             <select id='rate' name='rate'>
-              <option value='44' selected>44,100 Hz</option>
-              <option value='16'>16,000 Hz</option>
+              <option value='44'>44,100 Hz</option>
+              <option value='16' selected>16,000 Hz</option>
               <option value='11'>11,025 Hz</option>
               <option value='8'>8,000 Hz</option>
               <option value='5'>5,512 Hz</option>
