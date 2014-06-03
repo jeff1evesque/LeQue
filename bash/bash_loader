@@ -15,7 +15,10 @@ for dir in /*; do
 
   # execute script 'file'
             for file in "$dir"; do
-              "$file"
+              if [[ -f "$file"]]
+                then
+                  eval "$file"
+              fi
             done
 
         fi
