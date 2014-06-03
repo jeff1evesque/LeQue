@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# predetermined directories: haystack = (./@(directory1|directory2|directory3)/*)
-haystack = (./@(audio)/*)
+# predetermined directories: haystack = ( ./@(directory1|directory2|directory3)/* )
+haystack = ( ./@(audio)/* )
 
 # execute scripts in 'haystack'
 for file in "${haystack[@]}"; do  [[ -f $file && -x $file ]] "$file"; done
