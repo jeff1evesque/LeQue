@@ -1,0 +1,25 @@
+#!/bin/bash
+
+haystack = (audio, video)
+
+for dir in /*; do
+
+  # check if $dir is a directory
+  if [[ -d "$dir"]]
+    then
+
+  # check if determined directory matches within our permitted 'haystack'
+      for in dirname "${haystack[@]}"; do
+        if [ "$dir" = "$dirname" ]
+          then
+
+  # execute script 'file'
+            for file in "$dir"; do
+              "$file"
+            done
+
+        fi
+      done
+
+  fi
+done
