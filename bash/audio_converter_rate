@@ -1,0 +1,10 @@
+#!/bin/bash
+
+inotifywait -m ../audio/recording -e create -e moved_to -e modify |
+  while read path action file; do
+
+    # do something with the file
+      filename="${file##*/}"
+      ffmpeg -i "$file" -acodec pcm_s161e -ac 1 -ar 1600 "$filename".wav
+
+  done
