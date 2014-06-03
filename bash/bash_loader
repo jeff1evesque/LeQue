@@ -1,6 +1,6 @@
 #!/bin/bash
 
-haystack = (audio, video)
+haystack = (audio video)
 
 for dir in /*; do
 
@@ -9,7 +9,7 @@ for dir in /*; do
     then
 
   # check if determined directory matches within our permitted 'haystack'
-      for in dirname "${haystack[@]}"; do
+      for dirname "${haystack[@]}"; do
         if [ "$dir" = "$dirname" ]
           then
 
