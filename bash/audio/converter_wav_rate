@@ -1,10 +1,12 @@
 #!/bin/bash
+# note: this file is executed from 'bash_loader' , this is why the directory
+# paths seem to be too short (i.e. missing extra '..')
 
 inotifywait ../audio/recording -m -e create -e moved_to -e modify |
   while read path action file; do
 
     # do something with the file
       filename="${file##*/}"
-      ffmpeg -i "$file" -acodec pcm_s161e -ac 1 -ar 1600 -y ../recording-converted/"$filename".wav
+      ffmpeg -i "$file" -acodec pcm_s161e -ac 1 -ar 1600 -y ../audio/recording-converted/"$filename".wav
 
   done
