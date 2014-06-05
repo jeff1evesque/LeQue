@@ -7,6 +7,6 @@ inotifywait ../audio/recording -m -e create -e moved_to -e modify |
 
     # do something with the file
       filename="${file##*/}"
-      ffmpeg -i "$file" -acodec pcm_s161e -ac 1 -ar 1600 -y ../audio/recording-converted/"$filename".wav
+      ffmpeg -i ../audio/recording/"$file" -acodec pcm_s16le -ar 1600 -y ../audio/recording-converted/"$filename".wav
 
   done
