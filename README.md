@@ -17,7 +17,7 @@ This project will leverage Python's scripting ability - primarily to house the l
 
 ##Requirement
 
-Since we running OSX 10.6.8 for the host Operating system, we installed Virtual$
+Since we running OSX 10.6.8 for the host Operating system, we installed VirtualBox 4.1.10 r76795 using Ubuntu 10.04 for the Guest Operating System. 
 
 ###Installation:
 
