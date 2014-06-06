@@ -24,8 +24,10 @@ Since we running OSX 10.6.8 for the host Operating system, we installed VirtualB
 The following packages need to be installed through terminal in Ubuntu:
 
 ```
+sudo apt-get update
 sudo apt-get install inotify-tools
 sudo apt-get install ffmpeg
+sudo apt-get install firefox
 ```
 
 ###Configuration:
@@ -37,7 +39,7 @@ We need to open `/etc/rc.local`, and add the following lines -
 cd /var/www/audio-analyzer/bash && ./bash_loader > /dev/null 2>&1 &
 ```
 
-To ensure the above modification is working:
+To ensure the above modification is working -
 
 ```
 sudo /etc/init.d/rc.local start
