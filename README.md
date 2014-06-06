@@ -51,9 +51,15 @@ To ensure the above modification is working -
 sudo /etc/init.d/rc.local start
 ```
 
-Since we installed GIT earlier, we have to remember to configure our GIT user.  Only change the values within the double quotes:
+Since we installed GIT earlier, we have to remember to configure our GIT user.  Only change the values within the double quotes -
 
 ```
 git config --global user.email "YOUR-EMAIL@DOMAIN.COM"
 git config --global user.name "YOUR-NAME"
+```
+
+Fork this project in your GitHub account, then clone your repository of this project within Ubuntu VM -
+
+```
+sudo git clone https://jeff1evesque@github.com/[YOUR-USERNAME]/audio-analyzer.git [PROJECT-NAME]
 ```
