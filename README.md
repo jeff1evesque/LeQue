@@ -42,9 +42,9 @@ The following need to be installed without terminal in Ubuntu:
 
 ###Configuration:
 
-####Bash script running at Apache2 boot####
+####Bootable bash script
 
-We need to open `/etc/rc.local`, and add the following lines -
+`/etc/rc.local` allows us to run bash-scripts during apache2 boot.  Since `bash_loader` loads all our required bash-scripts, we will run this script.  So, add the following lines -
 
 ```
 # run 'bash_loader' at start-up for '/var/www/audio-analyzer' application (edited by JL)
@@ -57,7 +57,7 @@ To ensure the above modification is working -
 sudo /etc/init.d/rc.local start
 ```
 
-####Install and configure LAMP server####
+####LAMP server
 
 Recall earlier that we installed our LAMP server.  We need to modify `apache2.conf` file in order to access phpMyAdmin:
 
@@ -77,7 +77,7 @@ Then, restart apache:
 sudo service apache2 restart
 ```
 
-####Install and configure GIT repository####
+####GIT
 
 Since we installed GIT earlier, we have to remember to configure our GIT user.  Only change the values within the double quotes -
 
