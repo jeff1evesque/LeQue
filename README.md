@@ -29,6 +29,7 @@ sudo apt-get install inotify-tools
 sudo apt-get install ffmpeg
 sudo apt-get install firefox
 sudo apt-get install git-core
+sudo apt-get install lamp-server^ phpmyadmin
 ```
 
 The following need to be installed without terminal in Ubuntu:
@@ -62,4 +63,22 @@ Fork this project in your GitHub account, then clone your repository of this pro
 
 ```
 sudo git clone https://jeff1evesque@github.com/[YOUR-USERNAME]/audio-analyzer.git [PROJECT-NAME]
+```
+
+Recall earlier that we installed our LAMP server.  We need to modify `apache2.conf` file in order to access phpMyAdmin:
+
+```
+sudo pico /etc/apache2/apache2.conf
+```
+
+and add the following to the end of the file:
+
+```
+Include /etc/phpmyadmin/apache.conf
+```
+
+Then, restart apache:
+
+```
+sudo service apache2 restart
 ```
