@@ -25,6 +25,7 @@ The following packages need to be installed through terminal in Ubuntu:
 
 ```
 sudo apt-get install inotify-tools
+sudo apt-get install ffmpeg
 ```
 
 ###Configuration:
