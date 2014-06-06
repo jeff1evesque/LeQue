@@ -1,0 +1,3 @@
+[submodule "pyScss"]
+	path = pyScss
+	url = git://github.com/jeff1evesque/pyScss.git
