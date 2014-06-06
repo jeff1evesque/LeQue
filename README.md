@@ -33,6 +33,7 @@ sudo apt-get install lamp-server^ phpmyadmin
 sudo apt-get install python-pocketsphinx
 sudo apt-get install pocketsphinx-hmm-wsj1
 sudo apt-get install pocketsphinx-lm-wsj
+sudo apt-get install python-pyscss
 ```
 
 The following need to be installed without terminal in Ubuntu:
@@ -91,3 +92,12 @@ Fork this project in your GitHub account, then clone your repository of this pro
 ```
 sudo git clone https://jeff1evesque@github.com/[YOUR-USERNAME]/audio-analyzer.git [PROJECT-NAME]
 ```
+
+We need to initialize any submodules *audio-analyzer* is using.  Currently, we are only using one, *pyScss* -
+
+```
+git submodule init
+git submodule update
+```
+
+**Note:** the above two commands will update submodules.  If they are already initialized, then the latter command will suffice. 
