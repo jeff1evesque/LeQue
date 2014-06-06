@@ -80,7 +80,7 @@ sudo service apache2 restart
 
 ####GIT
 
-Since we installed GIT earlier, we have to remember to configure our GIT user.  Only change the values within the double quotes -
+Since we installed GIT earlier, we have to remember to configure our GIT user.  Only change the values within the double quotes (remove the quores for the email) -
 
 ```
 git config --global user.email "YOUR-EMAIL@DOMAIN.COM"
