@@ -33,7 +33,7 @@ sudo apt-get install firefox
 The following need to be installed without terminal in Ubuntu:
 
 1. Flash Player 11.1.102.62 (Released 02/15/2012)
-- http://helpx.adobe.com/flash-player/kb/archived-flash-player-versions.html
+..- http://helpx.adobe.com/flash-player/kb/archived-flash-player-versions.html
 
 ###Configuration:
 
