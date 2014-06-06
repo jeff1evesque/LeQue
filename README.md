@@ -30,6 +30,9 @@ sudo apt-get install ffmpeg
 sudo apt-get install firefox
 sudo apt-get install git-core
 sudo apt-get install lamp-server^ phpmyadmin
+sudo apt-get install python-pocketsphinx
+sudo apt-get install pocketsphinx-hmm-wsj1
+sudo apt-get install pocketsphinx-lm-wsj
 ```
 
 The following need to be installed without terminal in Ubuntu:
