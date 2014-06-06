@@ -60,13 +60,13 @@ sudo /etc/init.d/rc.local start
 
 ####LAMP server
 
-Recall earlier that we installed our LAMP server.  We need to modify `apache2.conf` file in order to access phpMyAdmin:
+Recall earlier that we installed our LAMP server with phpMyAdmin.  We need to modify `apache2.conf` file in order to access phpMyAdmin:
 
 ```
 sudo pico /etc/apache2/apache2.conf
 ```
 
-and add the following to the end of the file:
+by adding the following to the end of the file:
 
 ```
 Include /etc/phpmyadmin/apache.conf
@@ -80,7 +80,7 @@ sudo service apache2 restart
 
 ####GIT
 
-Since we installed GIT earlier, we have to remember to configure our GIT user.  Only change the values within the double quotes -
+Since we installed GIT earlier, we have to remember to configure our GIT user.  Only change the values within the double quotes (remove the quores for the email) -
 
 ```
 git config --global user.email "YOUR-EMAIL@DOMAIN.COM"
