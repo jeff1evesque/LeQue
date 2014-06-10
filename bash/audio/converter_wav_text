@@ -1,0 +1,17 @@
+#!/bin/bash
+# note: this file is executed from 'bash_loader' , this is why the directory
+# paths seem to be too short (i.e. missing extra '..')
+
+# apply CMUSphinx on audio wav file
+inotifywait ../audio/recording-converted -m -e create -e moved_to -e modify |
+
+# create directory if doesn't exist
+mkdir -p ../audio/recording-text
+
+  while read path action file; do
+
+    # do something with the file
+      filename="${file##*/}"
+      python ../python/audio_converter.py ../audio/recording-converted/"$filename".wav >> ../audio/recording-text/"$filename"
+
+  done
