@@ -44,21 +44,6 @@ The following need to be installed without terminal in Ubuntu:
 
 ###Configuration:
 
-####Bootable bash script
-
-`/etc/rc.local` allows us to run bash-scripts during apache2 boot.  Since `bash_loader` loads all our required bash-scripts, we will run this script.  So, add the following lines -
-
-```
-# run 'bash_loader' at start-up for '/var/www/audio-analyzer' application (edited by JL)
-cd /var/www/audio-analyzer/bash && ./bash_loader > /dev/null 2>&1 &
-```
-
-To ensure the above modification is working -
-
-```
-sudo /etc/init.d/rc.local start
-```
-
 ####LAMP server
 
 Recall earlier that we installed our LAMP server with phpMyAdmin.  We need to modify `apache2.conf` file in order to access phpMyAdmin:
@@ -102,3 +87,18 @@ git submodule update
 ```
 
 **Note:** the above two commands will update submodules.  If they are already initialized, then the latter command will suffice. 
+
+####Bootable bash script
+
+`/etc/rc.local` allows us to run bash-scripts during apache2 boot.  Since `bash_loader` loads all our required bash-scripts, we will run this script.  So, add the following lines -
+
+```
+# run 'bash_loader' at start-up for '/var/www/audio-analyzer' application (edited by JL)
+cd /var/www/audio-analyzer/bash && ./bash_loader > /dev/null 2>&1 &
+```
+
+To ensure the above modification is working -
+
+```
+sudo /etc/init.d/rc.local start
+```
