@@ -17,6 +17,8 @@ This project will leverage Python's scripting ability - primarily to house the l
 
 ##Requirement
 
+###Development
+
 Since we running OSX 10.6.8 for the host Operating System, we installed VirtualBox 4.1.10 r76795 using Ubuntu 11.04 for the Guest Operating System.
 
 The following sources allow for the above configuration:
