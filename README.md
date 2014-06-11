@@ -88,7 +88,9 @@ git submodule update
 
 **Note:** the above two commands will update submodules.  If they are already initialized, then the latter command will suffice. 
 
-Then, we need to change the file permission for the entire project by issueing the command:
+####File Permission
+
+Change the file permission for the entire project by issuing the command:
 
 ```
 cd /var/www
