@@ -28,7 +28,7 @@ The following sources allow for the above configuration:
 
 ###Installation:
 
-The following packages need to be installed through terminal in Ubuntu:
+We need to make the configuration defined in the *Configuration - Internet Connection*, as well as that defined in the *Configuration - Source List* section (see below).  Then, the following packages need to be installed through terminal in Ubuntu:
 
 ```
 sudo apt-get update
@@ -141,3 +141,25 @@ $ The nameservers listed below may not be recognized
 nameserver 10.63.64.1
 nameserver 68.238.96.12
 nameserver 68.238.112.12
+
+####Source List
+
+Since *Ubuntu 11.04* is not supported, create a backup of the  `/etc/apt/sources.list` file  -
+
+```
+cp /etc/apt/sources.list /etc/apt/sources.list.backup
+```
+
+Then, change the contents of the original file to the following -
+
+```
+## EOL upgrade sources.list
+# Required
+deb http://old-releases.ubuntu.com/ubuntu/ natty main restricted universe multiverse
+deb http://old-releases.ubuntu.com/ubuntu/ natty-updates main restricted universe multiverse
+deb http://old-releases.ubuntu.com/ubuntu/ natty-security main restricted universe multiverse
+
+# Optional
+#deb http://old-releases.ubuntu.com/ubuntu/ natty-backports main restricted universe multiverse
+#deb http://old-releases.ubuntu.com/ubuntu/ natty-proposed main restricted universe multiverse
+```
