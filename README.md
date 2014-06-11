@@ -88,6 +88,15 @@ git submodule update
 
 **Note:** the above two commands will update submodules.  If they are already initialized, then the latter command will suffice. 
 
+Then, we need to change the file permission for the entire project by issueing the command:
+
+```
+cd /var/www
+sudo chown -R jeffrey:admin audio-analyzer
+```
+
+**Note:** change 'jeffrey' to the user account YOU use.
+
 ####Bootable bash script
 
 `/etc/rc.local` allows us to run bash-scripts during apache2 boot.  Since `bash_loader` loads all our required bash-scripts, we will run this script.  So, add the following lines -
