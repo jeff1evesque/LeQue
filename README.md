@@ -55,6 +55,7 @@ sudo pico /etc/apache2/apache2.conf
 by adding the following to the end of the file:
 
 ```
+# Allow access to phpMyAdmin (edited by JL)
 Include /etc/phpmyadmin/apache.conf
 ```
 
