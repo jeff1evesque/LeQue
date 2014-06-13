@@ -13,7 +13,7 @@ Speech recognition (SR) is the translation of spoken words into text.
 
 ###Overview:
 
-This project will leverage Python's scripting ability - primarily to house the logic component of the sound analyzer.  The Python component will begin by activating the microphone on the machine, and do the necessary algorithms to convert defined speech components into commands.  The second component, the PHP portion will provide an interactive web application to house the former logic component.
+This project utilizes *Flash* within the web-browser in order to access the users micrphone.  When a recording is saved, it is reconfigured to *16 bit, 60 kHz, mono*.  The wav file is then converted to text using CMUSphinx, specifically *Pocket Sphinx*.  Then, we use Python to parse the converted text file into commands.
 
 ##Requirement
 
