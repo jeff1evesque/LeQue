@@ -35,6 +35,7 @@ sudo apt-get update
 sudo apt-get install inotify-tools
 sudo apt-get install ffmpeg
 sudo apt-get install firefox
+sudo apt-get install flashplugin-installer
 sudo apt-get install git-core
 sudo apt-get install lamp-server^ phpmyadmin
 sudo apt-get install python-pocketsphinx
@@ -43,11 +44,6 @@ sudo apt-get install pocketsphinx-lm-wsj
 sudo apt-get install python-pip python-dev build-essential
 sudo pip install pyScss
 ```
-
-The following need to be installed without terminal in Ubuntu:
-
-1. Flash Player 11.1.102.62 (Released 02/15/2012)
-  - http://helpx.adobe.com/flash-player/kb/archived-flash-player-versions.html
 
 ###Configuration:
 
