@@ -13,7 +13,7 @@ Speech recognition (SR) is the translation of spoken words into text.
 
 ###Overview:
 
-This project utilizes *Flash* within the web-browser in order to access the users micrphone.  When a recording is saved, it is reconfigured to *16 bit, 60 kHz, mono*.  The wav file is then converted to text using CMUSphinx, specifically *Pocket Sphinx*.  Then, we use Python to parse the converted text file into commands.
+This project utilizes *Flash* within the web-browser in order to access the users micrphone.  When a recording is saved, it is reconfigured to *16 bit, 60 kHz, mono*.  The wav file is then converted to text using CMUSphinx, specifically *PocketSphinx*.  Then, we use Python to parse the converted text file into commands.
 
 ##Requirement
 
