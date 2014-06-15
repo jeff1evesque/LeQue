@@ -154,7 +154,7 @@ sudo git submodule update
 
 ####File Permission
 
-Change the file permission for the entire project by issuing the command:
+Change the file permission for the entire project by issuing the command -
 
 ```
 cd /var/www
@@ -162,6 +162,13 @@ sudo chown -R jeffrey:admin audio-analyzer
 ```
 
 **Note:** change 'jeffrey' to the user account YOU use.
+
+Then, ensure nothing is contained within the `/var/www/audio-analyzer/audio` directory, then change it's ownership -
+
+```
+cd /var/www/audio-analyzer
+sudo chown www-data:www-data audio
+```
 
 ####Bootable bash script
 
