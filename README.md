@@ -81,7 +81,7 @@ deb http://old-releases.ubuntu.com/ubuntu/ natty-proposed main restricted univer
 
 ###Installation:
 
-We need to make the configuration defined in the *Configuration - Internet Connection*, as well as that defined in the *Configuration - Source List* section (see below).  Then, the following packages need to be installed through terminal in Ubuntu:
+The following packages need to be installed through terminal in Ubuntu:
 
 ```
 sudo apt-get update
