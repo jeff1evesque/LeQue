@@ -172,6 +172,6 @@ deb http://old-releases.ubuntu.com/ubuntu/ natty-updates main restricted univers
 deb http://old-releases.ubuntu.com/ubuntu/ natty-security main restricted universe multiverse
 
 # Optional
-#deb http://old-releases.ubuntu.com/ubuntu/ natty-backports main restricted universe multiverse
-#deb http://old-releases.ubuntu.com/ubuntu/ natty-proposed main restricted universe multiverse
+deb http://old-releases.ubuntu.com/ubuntu/ natty-backports main restricted universe multiverse
+deb http://old-releases.ubuntu.com/ubuntu/ natty-proposed main restricted universe multiverse
 ```
