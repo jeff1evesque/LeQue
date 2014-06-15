@@ -3,6 +3,9 @@
 # paths seem to be too short (i.e. missing extra '..')
 
 inotifywait ../audio/recording -m -e create -e moved_to -e modify |
+
+  mkdir -p ../audio/recording-converted
+
   while read path action file; do
 
     # do something with the file
