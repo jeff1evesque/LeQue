@@ -132,7 +132,7 @@ domain guate.net.gt
 search guate.net.gt
 # Add google DNS (edited by JL)
 nameserver 8.8.8.8
-# Keep the default nameservers
+# Keep the remaining nameservers
 nameserver 10.52.56.1
 nameserver 10.4.24.1
 nameserver 10.26.24.1
@@ -142,6 +142,14 @@ nameserver 10.63.64.1
 nameserver 68.238.96.12
 nameserver 68.238.112.12
 ```
+
+Since `/etc/resolv.conf` file is regenerated to default settings after each reboot, we need to ensure the above modifications are persistent.  This can be done by issuing the command -
+
+```
+sudo chattr +i /etc/resolv.conf
+```
+
+which changes the file attributes, by making it *immutable*.
 
 ####Source List
 
