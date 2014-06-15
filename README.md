@@ -163,11 +163,11 @@ sudo chown -R jeffrey:admin audio-analyzer
 
 **Note:** change 'jeffrey' to the user account YOU use.
 
-Then, ensure nothing is contained within the `/var/www/audio-analyzer/audio` directory, then change it's ownership -
+Then, with the exception of the `.gitignore` file, ensure `/var/www/audio-analyzer/audio` is an empty directory, so that we can change it's ownership -
 
 ```
 cd /var/www/audio-analyzer
-sudo chown www-data:www-data audio
+sudo chown www-data:admin audio
 ```
 
 ####Bootable bash script
