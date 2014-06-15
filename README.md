@@ -83,14 +83,21 @@ Fork this project in your GitHub account, then clone your repository of this pro
 sudo git clone https://jeff1evesque@github.com/[YOUR-USERNAME]/audio-analyzer.git [PROJECT-NAME]
 ```
 
+Then, add the *Remote Upstream*, this way we can pull any merged pull-requests:
+
+```
+cd /var/www/audio-analyzer
+git remote add upstream https://github.com/[USER_NAME]/[REPOSITORY_NAME].git
+```
+
 We need to initialize any submodules *audio-analyzer* is using.  Currently, we are only using one, *pyScss* -
 
 ```
-git submodule init
-git submodule update
+sudo git submodule init
+sudo git submodule update
 ```
 
-**Note:** the above two commands will update submodules.  If they are already initialized, then the latter command will suffice. 
+**Note:** the above two commands will update submodules.  If they are already initialized, then the latter command will suffice. Also, we have to use the *sudo* prefix, since we haven't changed the file permission yet.  We will take care of that below.
 
 ####File Permission
 
