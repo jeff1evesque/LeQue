@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# create 'logs' directory if doesn't exist
+mkdir -p logs
+
 # trace last execution of 'bash_loader'
 set -x; exec > logs/log_bash_loader 2>&1
 
