@@ -2,8 +2,10 @@
 # note: this file is executed from 'bash_loader' , this is why the directory
 # paths seem to be too short (i.e. missing extra '..')
 
+# convert wav file to correct format: 60 bit, 60 kHz, mono
 inotifywait ../audio/recording -m -e create -e moved_to -e modify |
 
+  # create directory if doesn't exist
   mkdir -p ../audio/recording-converted
 
   while read path action file; do
