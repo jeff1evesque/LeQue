@@ -1,7 +1,15 @@
 Auditory Analyzer
 =====================
 
-I am curious with the idea of having a web application that may be partly driven by voice-commands.  I will be using various languages - such as: Python, PhP, and basic shell scripting.
+The intention of this *web-application* is to allow the visitor to provide auditory commands, which get executed on the server.  The languages used for this project includes:
+
+- PhP
+- Python
+- Bash-Script
+- JavasScript
+- Sass (Ruby)
+
+Since this project is open to the public, feel free to contribute, or email jeff1evesque@yahoo.com regarding any questions.
 
 ##Auditory Analyzer, written in Python & PhP
 
