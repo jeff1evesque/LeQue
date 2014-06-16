@@ -11,7 +11,7 @@ inotifywait ../audio/recording-converted -m -e create -e moved_to -e modify |
   while read path action file; do
 
     # do something with the file
-      filename="${file##*/}"
+      filename="${file%%.*}"
       python ../python/audio_converter.py ../audio/recording-converted/"$filename" >> ../audio/recording-text/"$filename"
 
   done
