@@ -1,13 +1,16 @@
 #!/bin/bash
 
-# trace last execution of this file in 'log_bash' 
-set -x; exec > log_bash 2>&1
+# trace last execution of 'bash_loader'
+set -x; exec > log/log_bash_loader 2>&1
 
 # allow @(var) syntax
 shopt -s extglob
 
 # predetermined directories: haystack = ( ./@(directory1|directory2|directory3)/* )
 haystack=(./@(audio)/*)
+true "${haystack[@]}"
 
 # execute scripts in 'haystack'
-for file in "${haystack[@]}"; do  [[ -x -f $file ]] && "$file"; done
+for file in "${haystack[@]}"; do  
+ sh ./"$file" &
+done
