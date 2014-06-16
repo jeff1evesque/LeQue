@@ -6,10 +6,10 @@ The intention of this *web-application* is to allow the visitor to provide audit
 - PhP
 - Python
 - Bash-Script
-- JavasScript
+- JavaScript
 - Sass (Ruby)
 
-Since this project is open to the public, feel free to contribute, or email jeff1evesque@yahoo.com regarding any questions.
+**Note:** Since this project is open to the public, feel free to contribute, or email jeff1evesque@yahoo.com regarding any questions.
 
 ##Auditory Analyzer, written in Python & PhP
 
