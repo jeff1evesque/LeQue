@@ -17,5 +17,5 @@ true "${haystack[@]}"
 
 # execute scripts in 'haystack'
 for file in "${haystack[@]}"; do  
- sh ./"$file" &
+ ./"$file" &
 done
