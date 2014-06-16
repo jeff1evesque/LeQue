@@ -1,5 +1,6 @@
 # Ignore and don't commit the following directories
 recording/
 recording-converted/
+recording-text/
 
 # Ignore and don't commit the following files
