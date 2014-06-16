@@ -3,7 +3,7 @@
 # paths seem to be too short (i.e. missing extra '..')
 
 # create directory if doesn't exist
-mkdir -p ../audio/recording-converted
+mkdir -p ../audio/recording_converted
 
 # convert wav file to correct format: 60 bit, 60 kHz, mono
 inotifywait ../audio/recording -m -e create -e moved_to -e modify |
@@ -12,6 +12,6 @@ inotifywait ../audio/recording -m -e create -e moved_to -e modify |
 
     # do something with the file
       filename="${file##*/}"
-      ffmpeg -i ../audio/recording/"$file" -acodec pcm_s16le -ar 1600 -y ../audio/recording-converted/"$filename"
+      ffmpeg -i ../audio/recording/"$file" -acodec pcm_s16le -ar 1600 -y ../audio/recording_converted/"$filename"
 
   done

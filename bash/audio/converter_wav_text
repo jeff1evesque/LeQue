@@ -3,15 +3,15 @@
 # paths seem to be too short (i.e. missing extra '..')
 
 # create directory if doesn't exist
-mkdir -p ../audio/recording-text
+mkdir -p ../audio/recording_text
 
 # apply CMUSphinx on audio wav file
-inotifywait ../audio/recording-converted -m -e create -e moved_to -e modify |
+inotifywait ../audio/recording_converted -m -e create -e moved_to -e modify |
 
   while read path action file; do
 
     # do something with the file
       filename="${file%%.*}"
-      python ../python/audio_converter.py ../audio/recording-converted/"$file" >| ../audio/recording-text/"$filename"
+      python ../python/audio_converter.py ../audio/recording_converted/"$file" >| ../audio/recording_text/"$filename"
 
   done
