@@ -1,7 +1,10 @@
 #!/bin/bash
 
+# create 'logs' directory if doesn't exist
+mkdir -p logs
+
 # trace last execution of 'bash_loader'
-set -x; exec > log/log_bash_loader 2>&1
+set -x; exec > logs/log_bash_loader 2>&1
 
 # allow @(var) syntax
 shopt -s extglob
@@ -9,7 +12,7 @@ shopt -s extglob
 # predetermined directories: haystack = ( ./@(directory1|directory2|directory3)/* )
 haystack=(./@(audio)/*)
 
-# record 'haystack' variable in 'log/log_bash_loader'
+# record 'haystack' variable in 'logs/log_bash_loader'
 true "${haystack[@]}"
 
 # execute scripts in 'haystack'
