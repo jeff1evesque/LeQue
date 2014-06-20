@@ -12,6 +12,6 @@ inotifywait ../audio/recording_converted -m -e create -e moved_to -e modify |
 
     # do something with the file
       filename="${file%%.*}"
-      pocketsphinx_continuous -infile ../audio/recording_converted/"$file" -hmm ../pocketsphinx/acoustic_models/en-us -lm ../pocketsphinx/acoustic_models/cmusphinx-5.0en-us.lm.dmp >| ../audio/recording_text"$filename"
+      pocketsphinx_continuous -infile ../audio/recording_converted/"$file" -hmm ../pocketsphinx/acoustic_models/en-us -lm ../pocketsphinx/acoustic_models/cmusphinx-5.0en-us.lm.dmp >| ../audio/recording_text/"$filename"
 
   done
