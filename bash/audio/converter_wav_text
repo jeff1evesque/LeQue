@@ -12,6 +12,6 @@ inotifywait ../audio/recording_converted -m -e create -e moved_to -e modify |
 
     # do something with the file
       filename="${file%%.*}"
-      python ../python/audio_converter.py ../audio/recording_converted/"$file" >| ../audio/recording_text/"$filename"
+      pocketsphinx_continuous -infile ../audio/recording_converted/"$file" >| ../audio/recording_text"$filename"
 
   done
