@@ -1,0 +1,8 @@
+# Ignore and don't commit the followig directories
+
+# Ignore and don't commit the following files
+*
+
+# But don't ignore these files
+!.gitignore
+
