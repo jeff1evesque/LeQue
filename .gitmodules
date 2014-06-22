@@ -1,3 +1,6 @@
+[submodule "pyScss"]
+        path = pocketsphinx
+        url = git://github.com/jeff1evesque/pyScss.git
 [submodule "pocketsphinx"]
 	path = pocketsphinx
 	url = git://github.com/jeff1evesque/pocketsphinx.git
