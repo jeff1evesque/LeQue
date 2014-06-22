@@ -4,6 +4,7 @@
 
 # allow 'pocketsphinx_continuous' command
 PATH=$PATH:/usr/local/bin
+PATH=$PATH:/usr/local/share/pocketsphinx
 
 # create directory if doesn't exist
 mkdir -p ../audio/recording_text
