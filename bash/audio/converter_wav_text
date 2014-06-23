@@ -4,7 +4,6 @@
 
 # allow 'pocketsphinx_continuous' command
 PATH=$PATH:/usr/local/bin
-PATH=$PATH:/var/www/audio-analyzer/pocketsphinx/acoustic_models
 
 # create directory if doesn't exist
 mkdir -p ../audio/recording_text
