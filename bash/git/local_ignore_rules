@@ -1,0 +1,14 @@
+#!/bin/bash
+# note: this file is executed from 'bash_loader' , this is why the directory
+# paths seem to be too short (i.e. missing extra '..')
+
+# directory list to ignore
+haystack=(./@(../pocketsphinx/sphinxbase|../pocketsphinx/pocketsphinx)/*)
+
+for dir in "${haystack[@]}"; do  
+  # inotify determines if anything changed in 'haystack'
+  inotifywait "$dir" -m -e create -e moved_to -e modify |
+
+  # subshell: add local ignore rules
+  (cd "$dir"; git ls-files --others --exclude-standard >> .git/info/exclude; cd /var/www/audio-analyzer/bash)
+done
