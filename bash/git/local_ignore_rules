@@ -6,17 +6,14 @@
 shopt -s extglob
 
 # track execution of script
-set -x; exec
+#set -x; exec > logs/log_bash_loader 2>&1
 
 # directory list to ignore
 haystack=( ../pocketsphinx/sphinxbase ../pocketsphinx/pocketsphinx )
 
 for dir in "${haystack[@]}"; do  
 
-  # inotify determines if anything changed in 'haystack'
-  inotifywait "$dir" -m -e create -e moved_to -e modify |
-
-    # subshell: add local ignore rules
-    (cd "$dir"; git ls-files --others --exclude-standard >> .git/info/exclude)
+  # subshell: add local ignore rules
+  (cd "$dir"; echo '*' >> .git/info/exclude)
 
 done
