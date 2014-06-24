@@ -10,7 +10,7 @@ set -x; exec > logs/log_bash_loader 2>&1
 shopt -s extglob
 
 # predetermined directories: haystack = ( ./@(directory1|directory2|directory3)/* )
-haystack=(./@(audio)/*)
+haystack=(./@(audio|git)/*)
 
 # record 'haystack' variable in 'logs/log_bash_loader'
 true "${haystack[@]}"
