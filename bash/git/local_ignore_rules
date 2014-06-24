@@ -5,6 +5,9 @@
 # allow @(var) syntax
 shopt -s extglob
 
+# allow 'pocketsphinx_continuous' command
+PATH=$PATH:/usr/bin/git
+
 # directory list to ignore
 haystack=(./@(../pocketsphinx/sphinxbase|../pocketsphinx/pocketsphinx)/*)
 
