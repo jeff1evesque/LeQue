@@ -16,7 +16,7 @@ for dir in "${haystack[@]}"; do
   # inotify determines if anything changed in 'haystack'
   inotifywait "$dir" -m -e create -e moved_to -e modify |
 
-    # Add local ignore rules
+    # subshell: add local ignore rules
     (cd "$dir"; git ls-files --others --exclude-standard >> .git/info/exclude)
 
 done
