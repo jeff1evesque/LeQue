@@ -5,8 +5,8 @@
 # allow @(var) syntax
 shopt -s extglob
 
-# allow 'git' command
-PATH=$PATH:/usr/bin/git
+# directory list to ignore
+haystack=(../pocketsphinx/sphinxbase ../pocketsphinx/pocketsphinx)
 
 for dir in "${haystack[@]}"; do  
   # inotify determines if anything changed in 'haystack'
