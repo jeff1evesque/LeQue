@@ -9,16 +9,14 @@ shopt -s extglob
 set -x; exec
 
 # directory list to ignore
-haystack=(../pocketsphinx/sphinxbase ../pocketsphinx/pocketsphinx)
+haystack=( ../pocketsphinx/sphinxbase ../pocketsphinx/pocketsphinx )
 
 for dir in "${haystack[@]}"; do  
-
-  pwd
 
   # inotify determines if anything changed in 'haystack'
   inotifywait "$dir" -m -e create -e moved_to -e modify |
 
-    # subshell: add local ignore rules
-    (cd "$dir"; git ls-files --others --exclude-standard >> .git/info/exclude)
+    # Add local ignore rules
+    git ls-files --others --exclude-standard >> .git/info/exclude
 
 done
