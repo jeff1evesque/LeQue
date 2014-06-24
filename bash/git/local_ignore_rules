@@ -5,7 +5,7 @@
 # allow @(var) syntax
 shopt -s extglob
 
-# allow 'pocketsphinx_continuous' command
+# allow 'git' command
 PATH=$PATH:/usr/bin/git
 
 # directory list to ignore
