@@ -17,6 +17,6 @@ for dir in "${haystack[@]}"; do
   inotifywait "$dir" -m -e create -e moved_to -e modify |
 
     # Add local ignore rules
-    git ls-files --others --exclude-standard >> .git/info/exclude
+    (cd "$dir"; git ls-files --others --exclude-standard >> .git/info/exclude)
 
 done
