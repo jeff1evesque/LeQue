@@ -2,6 +2,9 @@
 # note: this file is executed from 'bash_loader' , this is why the directory
 # paths seem to be too short (i.e. missing extra '..')
 
+# allow @(var) syntax
+shopt -s extglob
+
 # directory list to ignore
 haystack=(./@(../pocketsphinx/sphinxbase|../pocketsphinx/pocketsphinx)/*)
 
