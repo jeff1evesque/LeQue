@@ -9,7 +9,7 @@ shopt -s extglob
 #set -x; exec > logs/log_bash_loader 2>&1
 
 # directory list to ignore
-haystack=( ../pocketsphinx/sphinxbase ../pocketsphinx/pocketsphinx )
+haystack=( ../pocketsphinx/sphinxbase ../pocketsphinx/pocketsphinx ../pocketsphinx/sphinxtrain )
 
 for dir in "${haystack[@]}"; do  
 
