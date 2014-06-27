@@ -1,0 +1,14 @@
+# This bash *test* file should be run in the same directory where this 
+# file resides.  Also, make sure that a sample audio wav file exists
+# `/var/www/audio-analyzer/audio/recording_converted/sample.wav`
+#
+# Note: running this file requires the `sudo` prefix:
+# 
+#       $ sudo ./test_pocketsphinx_continuous
+
+#!/bin/bash
+
+# trace last execution of 'test_pocketsphinx_continuous'
+set -x; exec > ../logs/log_test_pocketsphinx_continuous 2>&1
+
+pocketsphinx_continuous -infile ../../audio/recording_converted/sample.wav -hmm en-us -lm cmusphinx-5.0-en-us.lm.dmp >| ../../audio/recording_text/test_sample.txt
