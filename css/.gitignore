@@ -1,0 +1,5 @@
+# Ignore and don't commit the following directories
+.sass-cache/
+
+# Ignore and don't commit the following files
+main.css
