@@ -5,9 +5,6 @@
 # allow 'pocketsphinx_continuous' command
 PATH=$PATH:/usr/local/bin
 
-# create directory if doesn't exist
-mkdir -p ../audio/recording_text
-
 # apply CMUSphinx on audio wav file
 inotifywait ../audio/recording_converted -m -e create -e moved_to -e modify |
 
