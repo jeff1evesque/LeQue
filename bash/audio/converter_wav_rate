@@ -5,7 +5,7 @@
 # create directory if doesn't exist
 mkdir -p ../audio/recording_converted
 
-# convert wav file to correct format: 60 bit, 60 kHz, mono
+# convert wav file to correct format: 16 bit, 16 kHz, mono
 inotifywait ../audio/recording -m -e create -e moved_to -e modify |
 
   while read path action file; do
