@@ -2,6 +2,9 @@
 # note: this file is executed from 'bash_loader' , this is why the directory
 # paths seem to be too short (i.e. missing extra '..')
 
+# allow 'pocketsphinx_continuous' command
+PATH=$PATH://usr/local/bin/
+
 # create directory if doesn't exist
 mkdir -p ../audio/recording_text
 
@@ -12,6 +15,8 @@ inotifywait ../audio/recording_converted -m -e create -e moved_to -e modify |
 
     # do something with the file
       filename="${file%%.*}"
-      pocketsphinx_continuous -infile ../audio/recording_converted/"$file" -hmm en-us -lm cmusphinx-5.0-en-us.lm.dmp >| ../audio/recording_text/"$filename"
+#      pocketsphinx_continuous -infile ../pocketsphinx/audio/sample.wav -hmm en-us -lm cmusphinx-5.0-en-us.lm.dmp >| ../audio/recording_text/"$filename" 2>&1
+#      pocketsphinx_continuous -infile ../audio/recording_converted/"$file" -hmm en-us -lm cmusphinx-5.0-en-us.lm.dmp >| ../audio/recording_text/"$filename" 2>&1
+      pocketsphinx_continuous -infile ../audio/recording/"$file" -hmm en-us -lm cmusphinx-5.0-en-us.lm.dmp >| ../audio/recording_text/"$filename" 2>&1
 
   done

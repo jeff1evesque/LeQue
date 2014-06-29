@@ -12,6 +12,12 @@ inotifywait ../audio/recording -m -e create -e moved_to -e modify |
 
     # do something with the file
       filename="${file##*/}"
-      ffmpeg -i ../audio/recording/"$file" -acodec pcm_s16le -ar 1600 -y ../audio/recording_converted/"$filename"
+
+    # Convert audio wav file:
+      # -acodec pcm_s161e, ensure 16 bit audio
+      # -ac 1, ensures mono (1 audio channel)
+      # -ab, ensures bit rate (kbps)
+      # -ar ensures sample rate (hz)
+      ffmpeg -i ../audio/recording/"$file" -acodec pcm_s16le -ac 1 -ar 16000 ../audio/recording_converted/"$filename"
 
   done
