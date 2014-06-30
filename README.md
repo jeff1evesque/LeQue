@@ -99,9 +99,6 @@ sudo apt-get install firefox
 sudo apt-get install flashplugin-installer
 sudo apt-get install git-core
 sudo apt-get install lamp-server^ phpmyadmin
-sudo apt-get install python-pocketsphinx
-sudo apt-get install pocketsphinx-hmm-wsj1
-sudo apt-get install pocketsphinx-lm-wsj
 # Sass (ruby)
 sudo install rubygems1.8
 sudo install libhaml-ruby1.8
