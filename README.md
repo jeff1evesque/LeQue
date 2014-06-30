@@ -220,13 +220,13 @@ To begin ignoring specific directories (submodules), simply open the following f
 
 and, add respective directories to the `haystack` array.
 
+**Note:** each repository (or submodule) has it's own `.git/info/exclude` file.
+
 ## Testing / Execution
 
 ###Test Scripts:
 
 Before we attempt to translate our own audio files, it is worthwhile to test if our application is in operation.  For this reason, we've created a test-script which can be run as follows:
-
-**Note:** each repository (or submodule) has it's own `.git/info/exclude` file.
 
 ```
 cd /var/www/audio-analyzer/bash/tests
