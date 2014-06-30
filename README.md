@@ -150,6 +150,8 @@ cd /var/www/audio-analyzer
 git remote add upstream https://github.com/[USER_NAME]/[REPOSITORY_NAME].git
 ```
 
+#####GIT Submodule
+
 We need to initialize our git *submodules*:
 
 ```
@@ -157,7 +159,21 @@ sudo git submodule init
 sudo git submodule update
 ```
 
-**Note:** the above two commands will update submodules.  If they are already initialized, then the latter command will suffice. Also, we have to use the *sudo* prefix, since we haven't changed the file permission yet.  We will take care of that below.
+**Note:** We have to use the *sudo* prefix, since we haven't taken care of file permissions yet.
+
+The above two commands will update submodules.  If they are already initialized, then the latter command will suffice. Then, we need to pull the code-base into the initialized submodule directory:
+
+```
+cd /var/www/audio-analyzer
+git checkout -b NEW_BRANCH master
+cd [YOUR_SUBMODULE]
+git checkout master
+git pull
+cd ..
+git status
+```
+
+Now, commit and merge the submodule changes.
 
 ####File Permission
 
