@@ -203,7 +203,7 @@ cd /var/www/audio-analyzer/bash/tests
 ./test_pocketsphinx_continuous
 ```
 
-The product of this execution produces the translation text in the following file:
+The above script uses `sample.wav` file from our *PocketSphinx* submodule as input to the *PocketSphinx* translation engine.  So, be sure to initialize all submodules (as outlined in the GIT subsection).  Now, executing the script will produce a text-file containing the text translation of our `sample.wav` file:
 
 ```
 /var/www/audio-analyzer/audio/recording_text/test_sample.txt
