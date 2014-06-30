@@ -157,9 +157,9 @@ sudo git submodule init
 sudo git submodule update
 ```
 
-**Note:** the above two commands will update submodules.  If they are already initialized, then the latter command will suffice. But, we still need to pull the code-base into the submodule (see below).  Also, we have to use the *sudo* prefix, since we haven't changed the file permission yet.  We will take care of that below.
+**Note:** We have to use the *sudo* prefix, since we haven't taken care of file permissions yet.
 
-Then, we need to pull the code-base into the initialized submodule directory:
+The above two commands will update submodules.  If they are already initialized, then the latter command will suffice. Then, we need to pull the code-base into the initialized submodule directory:
 
 ```
 cd /var/www/audio-analyzer
