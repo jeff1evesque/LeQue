@@ -192,11 +192,25 @@ To ensure the above modification is working:
 sudo /etc/init.d/rc.local start
 ```
 
+####Local Ignore Rules
+
+We do not want to commit our git *submodules*.  For this reason, we created a bash-script that will apply git *local ignore rules*, which will ignore anything contained within the specified directories.
+
+To begin ignoring specific directories (submodules), simply open the following file:
+
+```
+/var/www/audio-analyzer/bash/git/local_ignore_rules
+```
+
+and, add respective directories to the `haystack` array.
+
 ## Testing / Execution
 
 ###Test Scripts:
 
 Before we attempt to translate our own audio files, it is worthwhile to test if our application is in operation.  For this reason, we've created a test-script which can be run as follows:
+
+**Note:** each repository (or submodule) has it's own `.git/info/exclude` file.
 
 ```
 cd /var/www/audio-analyzer/bash/tests
