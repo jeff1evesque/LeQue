@@ -159,6 +159,20 @@ sudo git submodule update
 
 **Note:** the above two commands will update submodules.  If they are already initialized, then the latter command will suffice. Also, we have to use the *sudo* prefix, since we haven't changed the file permission yet.  We will take care of that below.
 
+Then, we need to pull the code-base into the initialized submodule directory:
+
+```
+cd /var/www/audio-analyzer
+git checkout -b NEW_BRANCH master
+cd [YOUR_SUBMODULE]
+git checkout master
+git pull
+cd ..
+git status
+```
+
+Now, commit and merge the submodule changes.
+
 ####File Permission
 
 Change the file permission for the entire project by issuing the command:
