@@ -191,3 +191,26 @@ To ensure the above modification is working:
 ```
 sudo /etc/init.d/rc.local start
 ```
+
+## Testing / Execution
+
+###Test Scripts:
+
+Before we attempt to translate our own audio files, it is worthwhile to test if our application is in operation.  For this reason, we've created a test-script which can be run as follows:
+
+```
+cd /var/www/audio-analyzer/bash/tests
+./test_pocketsphinx_continuous
+```
+
+The product of this execution produces the translation text in the following file:
+
+```
+/var/www/audio-analyzer/audio/recording_text/test_sample.txt
+```
+
+It will also produce a log-file:
+
+```
+/var/www/audio-analyzer/bash/logs/log_test_pocketsphinx_continuous
+```
