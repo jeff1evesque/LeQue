@@ -150,7 +150,7 @@ cd /var/www/audio-analyzer
 git remote add upstream https://github.com/[USER_NAME]/[REPOSITORY_NAME].git
 ```
 
-We need to initialize any submodules *audio-analyzer* is using.  Currently, we are only using one, *pyScss*:
+We need to initialize our git *submodules*:
 
 ```
 sudo git submodule init
