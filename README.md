@@ -102,8 +102,6 @@ sudo apt-get install lamp-server^ phpmyadmin
 sudo apt-get install python-pocketsphinx
 sudo apt-get install pocketsphinx-hmm-wsj1
 sudo apt-get install pocketsphinx-lm-wsj
-sudo apt-get install python-pip python-dev build-essential
-sudo pip install pyScss
 # Sass (ruby)
 sudo install rubygems1.8
 sudo install libhaml-ruby1.8
