@@ -210,7 +210,7 @@ sudo /etc/init.d/rc.local start
 
 ####Local Ignore Rules
 
-We do not want to commit our git *submodules*.  For this reason, we created a bash-script that will apply git *local ignore rules*, which will ignore anything contained within the specified directories.
+We do not want to commit files, or directories within our git *submodules*.  For this reason, we created a bash-script that will apply git *local ignore rules*, which will ignore anything contained within the specified directories.
 
 To begin ignoring specific directories (submodules), simply open the following file:
 
