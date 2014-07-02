@@ -99,11 +99,9 @@ sudo apt-get install firefox
 sudo apt-get install flashplugin-installer
 sudo apt-get install git-core
 sudo apt-get install lamp-server^ phpmyadmin
-# Sass (ruby)
-sudo install rubygems1.8
-sudo install libhaml-ruby1.8
-sudo gem install sass
 ```
+
+**Note: Each submodule pulled into this project may require further packages.  Be sure to check the *README.md* of each submodule being cloned into this project.
 
 ###Configuration:
 
