@@ -222,6 +222,20 @@ and, add respective directories to the `haystack` array.
 
 **Note:** each repository (or submodule) has it's own `.git/info/exclude` file.
 
+####Submodule Installation
+
+We need to install our *Sphinx* related submodules:
+
+```
+cd /var/www/audio-analyzer/pocketsphinx/sphinxbase
+./autogen.sh
+sudo make install
+
+cd ../pocketsphinx
+./autogen.sh
+sudo make install
+```
+
 ## Testing / Execution
 
 ###Test Scripts:
