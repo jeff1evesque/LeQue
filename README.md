@@ -138,14 +138,14 @@ git config --global user.name "YOUR-NAME"
 Fork this project in your GitHub account, then clone your repository of this project within Ubuntu VM:
 
 ```
-sudo git clone https://jeff1evesque@github.com/[YOUR-USERNAME]/audio-analyzer.git [PROJECT-NAME]
+sudo git clone https://[YOUR-USERNAME]@github.com/[YOUR-USERNAME]/audio-analyzer.git [PROJECT-NAME]
 ```
 
 Then, add the *Remote Upstream*, this way we can pull any merged pull-requests:
 
 ```
 cd /var/www/audio-analyzer
-git remote add upstream https://github.com/[USER_NAME]/[REPOSITORY_NAME].git
+git remote add upstream https://github.com/[YOUR-USERNAME]/[REPOSITORY-NAME].git
 ```
 
 #####GIT Submodule
