@@ -234,6 +234,14 @@ cd ../pocketsphinx
 sudo make install
 ```
 
+####Automation
+
+#####Grunt
+
+We will automate Grunt's task management with tools such as Sass, Uglify, and Modernizr.  Keep in mind, *grunt* only needs to be setup once within a system. or web-server (depending on setup).  Then, each *web-application* simply defines its own `gruntfile.js` to leverage the automation process.
+
+More information regarding setting-up *Grunt* can be found within the [README.md](https://github.com/jeff1evesque/grunt/blob/master/README.md) file from our [*Grunt repository*](http://github.com/jeff1evesque/grunt).
+
 ## Testing / Execution
 
 ###Test Scripts:
