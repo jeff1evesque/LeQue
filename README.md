@@ -238,7 +238,7 @@ sudo make install
 
 #####Grunt
 
-We will automate Grunt's task management with tools such as Sass, Uglify, and Modernizr.  Keep in mind, *grunt* only needs to be setup once within a system. or web-server (depending on setup).  Then, each *web-application* simply defines its own `gruntfile.js` to leverage the automation process.
+We will automate Grunt's task management, which will encompass tools such as [Sass](https://github.com/gruntjs/grunt-contrib-sass), [Uglify](https://github.com/gruntjs/grunt-contrib-uglify), and [Modernizr](https://github.com/Modernizr/grunt-modernizr).  *Grunt* requires setup only once within a system. or web-server (depending on setup).  Each *web-application* within this system may define its own `gruntfile.js` to leverage this automation process.
 
 More information regarding setting-up *Grunt* can be found within the [README.md](https://github.com/jeff1evesque/grunt/blob/master/README.md) file from our [*Grunt repository*](http://github.com/jeff1evesque/grunt).
 
