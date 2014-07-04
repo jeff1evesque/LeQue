@@ -11,16 +11,19 @@ module.exports = function (grunt) {
   // Watch task configuration
     watch: {
       sass: {
-        files: 'style/scss/*.scss',
+        files: 'src/scss/*.scss',
         tasks: ['sass']
       }
     },
 
   // Sass task configuration
     sass: {
-      dev: {
+      dist: {
+        options: {
+          style: 'compressed'
+        }
         files: {
-          'style/css/main.css' : 'style/scss/main.scss'
+          'assets/css/main.css' : 'src/scss/main.scss'
         }
       } 
     },
