@@ -2,8 +2,8 @@
 # note: this file is executed from 'bash_loader' , this is why the directory
 # paths seem to be too short (i.e. missing extra '..')
 
-# allow 'pocketsphinx_continuous' command
-PATH=$PATH://usr/local/bin/grunt
+# allow 'grunt' command
+PATH=$PATH:/usr/local/bin/grunt
 
 # allow @(var) syntax
 shopt -s extglob
