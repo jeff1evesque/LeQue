@@ -14,6 +14,6 @@ haystack=( ../pocketsphinx/sphinxbase ../pocketsphinx/pocketsphinx ../pocketsphi
 for dir in "${haystack[@]}"; do  
 
   # subshell: add local ignore rules
-  (cd "$dir"; echo '*' >> .git/info/exclude)
+  (cd "$dir" && echo '*' >> .git/info/exclude)
 
 done
