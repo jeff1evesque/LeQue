@@ -1,0 +1,12 @@
+#!/bin/bash
+# note: this file is executed from 'bash_loader' , this is why the directory
+# paths seem to be too short (i.e. missing extra '..')
+
+# allow @(var) syntax
+shopt -s extglob
+
+# track execution of script
+#set -x; exec > logs/log_bash_loader 2>&1
+
+# subshell: move into 'grunt' clone repository, and execute 'grunt' command
+(cd ../grunt; grunt)
