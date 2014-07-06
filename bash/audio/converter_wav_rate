@@ -10,7 +10,14 @@ inotifywait ../audio/recording -m -e close_write |
 
   while read path action file; do
 
-    # do something with the file
+  # audio information
+    audio_info=$(ffmpeg -i "$file" 2>&1 | grep 'Stream')
+  # audio configuration
+    audio_criteria="Audio: pcm_s16le, 16000 Hz, 1 channels"
+
+  # does modified file contain required 'audio configuration'
+    if [[ "$audio_info" =~ "$audio_criteria" ]]; then
+
       filename="${file##*/}"
 
     # Convert audio wav file:
@@ -20,5 +27,7 @@ inotifywait ../audio/recording -m -e close_write |
       # -ar ensures sample rate (hz)
       # -y, overwrites existing file
       ffmpeg -i ../audio/recording/"$file" -acodec pcm_s16le -ac 1 -ar 16000 -y ../audio/recording_converted/"$filename"
-
+    else
+      cp ../audio/recording/"$file"  ../audio/recording_converted/"$filename"
+    fi
   done
