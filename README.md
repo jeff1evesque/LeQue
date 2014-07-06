@@ -290,20 +290,20 @@ ngram_search_fwdtree.c(xxx): TOTAL fwdtxxxx xx.xx wall x.xxx
 
 ####Automation Time
 
-If we are using *bash automation*, we can acquire information pertaining to the *Translation Time* within our `log_bash_loader` script:
+If we are implementing *bash automation*, we can acquire information pertaining to *Translation Time* within the `log_bash_loader` script:
 
 ```
 /var/www/audio-analyzer/bash/logs/log_bash_loader/
 ```
 
-However, if we executed our test script `test_pocketsphinx_continuous`:
+However, if we executed the test script `test_pocketsphinx_continuous`:
 
 ```
 cd /var/www/audio-analyzer/bash/tests/
 ./test_pocketsphinx_continuous
 ```
 
-then we will find necessary information within the file `log_test_pocketsphinx_continuous`:
+then, translation time information can be found within the `log_test_pocketsphinx_continuous` file:
 
 ```
 /var/www/audio-analyzer/bash/logs/
