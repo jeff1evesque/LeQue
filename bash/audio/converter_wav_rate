@@ -6,7 +6,7 @@
 mkdir -p ../audio/recording_converted
 
 # convert wav file to correct format: 16 bit, 16 kHz, mono
-inotifywait ../audio/recording -m -e close_write -e create |
+inotifywait ../audio/recording -m -e close_write |
 
   while read path action file; do
 
