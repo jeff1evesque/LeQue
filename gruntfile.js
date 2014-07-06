@@ -13,7 +13,7 @@ module.exports = function (grunt) {
       css: {
         files: 'src/scss/*.scss',
         tasks: ['sass']
-      }
+      },
     },
 
   // Sass task configuration
@@ -21,12 +21,12 @@ module.exports = function (grunt) {
       dist: {
         options: {
           style: 'compressed'
-        }
+        },
         files: {
           'assets/css/main.css' : 'src/scss/main.scss'
         }
       } 
-    },
+    }
 
   });
 
