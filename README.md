@@ -261,3 +261,29 @@ It will also produce a log-file:
 ```
 /var/www/audio-analyzer/bash/logs/log_test_pocketsphinx_continuous
 ```
+
+###Translation Time
+
+The [PocketSphinx](http://cmusphinx.sourceforge.net/wiki/tutorialpocketsphinx) Translation engine ideally should have a translation time (TR) equal to three times the recording time (RT) of the audio *wav* file:
+
+```
+TR = 3 x RT
+```
+
+We can verify the *translation time* (TR) by checking the output from the command `pocketsphinx_continuous`.  The output from the command will produce many lines.  However, the ones we particularly care about have a very specific form.
+
+####CPU Time
+
+The *CPU Time* is the actual *execution time* for the `pocketsphinx_continuous` command.  Therefore, the sum of all such lines will produce the overall CPU Time for the `pocketsphinx_continuous` command:
+
+```
+ngram_search_fwdtree.c(xxx): TOTAL fwdxxxx xx.xx CPU x.xxx xRTINFO:
+``` 
+
+####System Time
+
+The *Wall Time* is the actual *system time* for the `pocketsphinx_continuous` command.  A system can pause processes for various operations, including those used in relation to `pocketsphinx_continuous`.  Therefore, this may be a better measure of how long a translation took to convert an audio file.  The sum of all such lines will produce the overall System Time for the `pocketsphinx_continuous` command:
+
+```
+ngram_search_fwdtree.c(xxx): TOTAL fwdtxxxx xx.xx wall x.xxx
+```
