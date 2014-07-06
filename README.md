@@ -264,7 +264,7 @@ It will also produce a log-file:
 
 ###Translation Time
 
-The [PocketSphinx](http://cmusphinx.sourceforge.net/wiki/tutorialpocketsphinx) Translation engine ideally should have a translation time (TR) equal to three times the recording time (RT) of the audio *wav* file:
+The [PocketSphinx](http://cmusphinx.sourceforge.net/wiki/tutorialpocketsphinx) translation engine ideally should have a translation time **(TR)** equal to three times the recording time **(RT)**:
 
 ```
 TR = 3 x RT
@@ -286,4 +286,25 @@ The *Wall Time* is the actual *system time* for the `pocketsphinx_continuous` co
 
 ```
 ngram_search_fwdtree.c(xxx): TOTAL fwdtxxxx xx.xx wall x.xxx
+```
+
+####Automation Time
+
+If we are using *bash automation*, we can acquire information pertaining to the *Translation Time* within our `log_bash_loader` script:
+
+```
+/var/www/audio-analyzer/bash/logs/log_bash_loader/
+```
+
+However, if we executed our test script `test_pocketsphinx_continuous`:
+
+```
+cd /var/www/audio-analyzer/bash/tests/
+./test_pocketsphinx_continuous
+```
+
+then we will find necessary information within the file `log_test_pocketsphinx_continuous`:
+
+```
+/var/www/audio-analyzer/bash/logs/
 ```
