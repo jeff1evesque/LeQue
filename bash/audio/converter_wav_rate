@@ -27,7 +27,9 @@ inotifywait ../audio/recording -m -e close_write |
       # -ar ensures sample rate (hz)
       # -y, overwrites existing file
       ffmpeg -i ../audio/recording/"$file" -acodec pcm_s16le -ac 1 -ar 16000 -y ../audio/recording_converted/"$filename"
+
     else
       cp ../audio/recording/"$file"  ../audio/recording_converted/"$filename"
+
     fi
   done
