@@ -24,7 +24,7 @@ echo $output;
     <script type='text/javascript' src='js/recorder_attributes.js'></script>
     <script type='text/javascript' src='js/recorder_initialize.js'></script>
 
-    <link rel='stylesheet' type='text/css' href='css/main.css'>
+    <link rel='stylesheet' type='text/css' href='assets/css/main.css'>
   </head>
 
   <body>
