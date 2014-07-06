@@ -243,23 +243,27 @@ More information regarding setting-up [Grunt](https://gruntjs.com), can be found
 
 ###Test Scripts:
 
-Before attempting to translate our own audio files, it may be worthwhile to test if the application is in operation.  For this reason, we've created a test-script which can be run as follows:
+Before translating audio files, it is possible to perform a few tests to gauge the [PocketSphinx](http://cmusphinx.sourceforge.net/wiki/tutorialpocketsphinx) translation engine.  For example. the following script tests the command `pocketsphinx_continuous` against a `sample.wav` file from the *pocketsphinx* submodule:
 
 ```
 cd /var/www/audio-analyzer/bash/tests
 ./test_pocketsphinx_continuous
 ```
 
-The above script uses `sample.wav` file from our *PocketSphinx* submodule as input to the *PocketSphinx* translation engine.  So, be sure to initialize all submodules (as outlined in the GIT subsection).  Now, executing the script will produce a text-file containing the text translation of our `sample.wav` file:
+**Note:** Since the above script uses `sample.wav`, be sure to initialize all submodules (as outlined in the GIT subsection).
+
+The execution of the above the script will produce a text-file containing the text translation of `sample.wav`:
 
 ```
-/var/www/audio-analyzer/audio/recording_text/test_sample.txt
+cd /var/www/audio-analyzer/audio/recording_text/
+pico test_sample.txt
 ```
 
-It will also produce a log-file:
+A corresponding log-file is also created:
 
 ```
-/var/www/audio-analyzer/bash/logs/log_test_pocketsphinx_continuous
+cd /var/www/audio-analyzer/bash/logs/
+pico log_test_pocketsphinx_continuous
 ```
 
 ###Translation Time
@@ -282,7 +286,7 @@ ngram_search_fwdtree.c(xxx): TOTAL fwdxxxx xx.xx CPU x.xxx xRTINFO:
 
 ####System Time
 
-The *Wall Time* is the actual *system time* for the `pocketsphinx_continuous` command.  A system can pause processes for various operations, including those used in relation to `pocketsphinx_continuous`.  Therefore, this may be a better measure of how long a translation took to convert an audio file.  The sum of all such lines will produce the overall System Time for the `pocketsphinx_continuous` command:
+The *Wall Time* is the actual *system time* for the `pocketsphinx_continuous` command.  A system can pause processes for various operations, including those used in relation to `pocketsphinx_continuous`.  Therefore, possibly a better measure of the overall translation time.  The sum of all such lines will produce the overall *System Time* for the `pocketsphinx_continuous` command:
 
 ```
 ngram_search_fwdtree.c(xxx): TOTAL fwdtxxxx xx.xx wall x.xxx
@@ -290,7 +294,7 @@ ngram_search_fwdtree.c(xxx): TOTAL fwdtxxxx xx.xx wall x.xxx
 
 ####Automation Time
 
-If *bash automation* is being implemented, information pertaining to *Translation Time* can be acquire from `log_bash_loader`:
+If *bash automation* is being implemented, information pertaining to *Translation Time* can be acquired from `log_bash_loader`:
 
 ```
 /var/www/audio-analyzer/bash/logs/
@@ -304,7 +308,7 @@ cd /var/www/audio-analyzer/bash/tests/
 ./test_pocketsphinx_continuous
 ```
 
-then, translation time information can be found within `log_test_pocketsphinx_continuous`:
+then, the *translation time* information can be found within `log_test_pocketsphinx_continuous`:
 
 ```
 /var/www/audio-analyzer/bash/logs/
