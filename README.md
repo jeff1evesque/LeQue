@@ -243,7 +243,7 @@ More information regarding setting-up [Grunt](https://gruntjs.com), can be found
 
 ###Test Scripts:
 
-Before translating audio files, it is possible to perform a few tests to gauge the [PocketSphinx](http://cmusphinx.sourceforge.net/wiki/tutorialpocketsphinx) translation engine.  For example. the following script tests the command `pocketsphinx_continuous` against a `sample.wav` file from the *pocketsphinx* submodule:
+Before translating audio files, it is possible to perform a few tests to gauge the [PocketSphinx](http://cmusphinx.sourceforge.net/wiki/tutorialpocketsphinx) translation engine.  For example, the following script tests the command `pocketsphinx_continuous` against `sample.wav` file from the *pocketsphinx* submodule:
 
 ```
 cd /var/www/audio-analyzer/bash/tests
