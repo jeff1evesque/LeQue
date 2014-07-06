@@ -268,13 +268,13 @@ pico log_test_pocketsphinx_continuous
 
 ###Translation Time
 
-The [PocketSphinx](http://cmusphinx.sourceforge.net/wiki/tutorialpocketsphinx) translation engine ideally should have a translation time **(TR)** equal to three times the recording time **(RT)**:
+The [PocketSphinx](http://cmusphinx.sourceforge.net/wiki/tutorialpocketsphinx) translation engine ideally should have a *translation time* **(TR)** equal to three times the *recording time* **(RT)**:
 
 ```
 TR = 3 x RT
 ```
 
-The *translation time* (TR) can be verified by checking the output from the command `pocketsphinx_continuous`.  The output from the command will produce many lines.  However, the ones we particularly care about have a very specific form.
+The *translation time* (TR) can be verified by checking the output from the command `pocketsphinx_continuous`.  This command will output many lines.  However, the ones of particular relevance have a very specific form.
 
 ####CPU Time
 
