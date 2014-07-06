@@ -101,8 +101,6 @@ sudo apt-get install git-core
 sudo apt-get install lamp-server^ phpmyadmin
 ```
 
-**Note:** Be sure to check the *README.md** file from each submodule being cloned into this project.  Additional packages may be required.
-
 ###Configuration:
 
 ####LAMP server
