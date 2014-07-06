@@ -243,7 +243,7 @@ More information regarding setting-up [Grunt](https://gruntjs.com), can be found
 
 ###Test Scripts:
 
-Before we attempt to translate our own audio files, it is worthwhile to test if our application is in operation.  For this reason, we've created a test-script which can be run as follows:
+Before attempting to translate our own audio files, it may be worthwhile to test if the application is in operation.  For this reason, we've created a test-script which can be run as follows:
 
 ```
 cd /var/www/audio-analyzer/bash/tests
@@ -270,7 +270,7 @@ The [PocketSphinx](http://cmusphinx.sourceforge.net/wiki/tutorialpocketsphinx) t
 TR = 3 x RT
 ```
 
-We can verify the *translation time* (TR) by checking the output from the command `pocketsphinx_continuous`.  The output from the command will produce many lines.  However, the ones we particularly care about have a very specific form.
+The *translation time* (TR) can be verified by checking the output from the command `pocketsphinx_continuous`.  The output from the command will produce many lines.  However, the ones we particularly care about have a very specific form.
 
 ####CPU Time
 
@@ -290,21 +290,23 @@ ngram_search_fwdtree.c(xxx): TOTAL fwdtxxxx xx.xx wall x.xxx
 
 ####Automation Time
 
-If we are implementing *bash automation*, we can acquire information pertaining to *Translation Time* within the `log_bash_loader` script:
+If *bash automation* is being implemented, information pertaining to *Translation Time* can be acquire from `log_bash_loader`:
 
 ```
-/var/www/audio-analyzer/bash/logs/log_bash_loader/
+/var/www/audio-analyzer/bash/logs/
+pico log_bash_loader
 ```
 
-However, if we executed the test script `test_pocketsphinx_continuous`:
+If `test_pocketsphinx_continuous` was executed:
 
 ```
 cd /var/www/audio-analyzer/bash/tests/
 ./test_pocketsphinx_continuous
 ```
 
-then, translation time information can be found within the `log_test_pocketsphinx_continuous` file:
+then, translation time information can be found within `log_test_pocketsphinx_continuous`:
 
 ```
 /var/www/audio-analyzer/bash/logs/
+pico log_text_pocketsphinx_continuous
 ```
