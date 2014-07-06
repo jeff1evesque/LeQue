@@ -9,7 +9,7 @@ PATH="/usr/local/bin:$PATH"
 mkdir -p ../audio/recording_text
 
 # apply CMUSphinx on audio wav file
-inotifywait ../audio/recording_converted -m -e close_write |
+inotifywait ../audio/recording_converted -m -e close_write -e create |
 
   while read path action file; do
 
