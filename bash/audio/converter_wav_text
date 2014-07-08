@@ -2,8 +2,8 @@
 # note: this file is executed from 'bash_loader' , this is why the directory
 # paths seem to be too short (i.e. missing extra '..')
 
-# allow 'pocketsphinx_continuous' command
-PATH=$PATH://usr/local/bin/
+# Pre-Pathing: allow 'pocketsphinx_continuous' command
+PATH="/usr/local/bin:$PATH"
 
 # create directory if doesn't exist
 mkdir -p ../audio/recording_text
