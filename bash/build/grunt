@@ -2,8 +2,8 @@
 # note: this file is executed from 'bash_loader' , this is why the directory
 # paths seem to be too short (i.e. missing extra '..')
 
-# allow 'grunt' command
-PATH=$PATH:/usr/local/bin/grunt
+# Pre-Pathing: allow 'grunt' command
+PATH="/usr/local/bin:$PATH"
 
 # allow @(var) syntax
 shopt -s extglob
@@ -12,4 +12,4 @@ shopt -s extglob
 #set -x; exec > logs/log_bash_loader 2>&1
 
 # subshell: move into 'grunt' clone repository, and execute 'grunt' command
-(cd ../grunt; grunt)
+(cd ../grunt && grunt)
