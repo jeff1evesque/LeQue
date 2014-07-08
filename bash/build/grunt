@@ -11,5 +11,7 @@ shopt -s extglob
 # track execution of script
 #set -x; exec > logs/log_bash_loader 2>&1
 
-# subshell: move into 'grunt' clone repository, and execute 'grunt' command
-(cd ../grunt && grunt)
+# subshell: move into 'grunt' clone repository, and execute 'grunt' commands
+#           these 'Registered Tasks' are defined within the 'gruntfile.js`
+(cd ../grunt && grunt build-sass)
+(cd ../grunt && grunt build-uglify)
