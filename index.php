@@ -17,12 +17,12 @@ echo $output;
 
 <html>
   <head>
-    <script type='text/javascript' src='js/jquery-1.8.3.min.js'></script>
-    <script type='text/javascript' src='js/swfobject.js'></script>
-    <script type='text/javascript' src='js/recorder.js'></script>
-    <script type='text/javascript' src='js/recorder_control.js'></script>
-    <script type='text/javascript' src='js/recorder_attributes.js'></script>
-    <script type='text/javascript' src='js/recorder_initialize.js'></script>
+    <script type='text/javascript' src='assets/js/jquery-1.8.3.min.js'></script>
+    <script type='text/javascript' src='assets/js/swfobject.js'></script>
+    <script type='text/javascript' src='assets/js/recorder.js'></script>
+    <script type='text/javascript' src='assets/js/recorder_control.js'></script>
+    <script type='text/javascript' src='assets/js/recorder_attributes.js'></script>
+    <script type='text/javascript' src='assets/js/recorder_initialize.js'></script>
 
     <link rel='stylesheet' type='text/css' href='assets/css/main.css'>
   </head>
