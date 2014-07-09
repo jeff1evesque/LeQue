@@ -230,6 +230,10 @@ sudo make install
 cd ../pocketsphinx
 ./autogen.sh
 sudo make install
+
+cd ../sphinxtrain
+./autogen.sh
+sudo make install
 ```
 
 ####Automation
