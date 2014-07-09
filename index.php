@@ -18,13 +18,13 @@ echo $output;
 <html>
   <head>
     <script type='text/javascript' src='assets/js/jquery-1.8.3.min.js'></script>
-    <script type='text/javascript' src='assets/js/swfobject.js'></script>
-    <script type='text/javascript' src='assets/js/recorder.js'></script>
-    <script type='text/javascript' src='assets/js/recorder_control.js'></script>
-    <script type='text/javascript' src='assets/js/recorder_attributes.js'></script>
-    <script type='text/javascript' src='assets/js/recorder_initialize.js'></script>
+    <script type='text/javascript' src='assets/js/swfobject.min.js'></script>
+    <script type='text/javascript' src='assets/js/recorder.min.js'></script>
+    <script type='text/javascript' src='assets/js/recorder_control.min.js'></script>
+    <script type='text/javascript' src='assets/js/recorder_attributes.min.js'></script>
+    <script type='text/javascript' src='assets/js/recorder_initialize.min.js'></script>
 
-    <link rel='stylesheet' type='text/css' href='assets/css/main.css'>
+    <link rel='stylesheet' type='text/css' href='assets/css/main.min.css'>
   </head>
 
   <body>
