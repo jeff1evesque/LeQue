@@ -15,3 +15,4 @@ shopt -s extglob
 #           these 'Registered Tasks' are defined within the 'gruntfile.js`
 (cd ../grunt && grunt build-sass)
 (cd ../grunt && grunt build-uglify)
+(cd ../grunt && grunt build-imagemin)
