@@ -14,6 +14,8 @@ inotifywait ../audio/recording -m -e close_write |
     audio_info=$(ffmpeg -i "$file" 2>&1 | grep 'Stream')
   # audio configuration
     audio_criteria="Audio: pcm_s16le, 16000 Hz, 1 channels"
+  # filename of modified file
+    filename="${file##*/}"
 
   # does modified file contain required 'audio configuration'
     if [[ "$audio_info" =~ "$audio_criteria" ]]; then
@@ -21,8 +23,6 @@ inotifywait ../audio/recording -m -e close_write |
       cp ../audio/recording/"$file"  ../audio/recording_converted/"$filename"
 
     else
-
-      filename="${file##*/}"
 
     # Convert audio wav file:
       # -acodec pcm_s161e, ensures 16 bit audio
