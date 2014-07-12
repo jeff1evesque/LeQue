@@ -27,12 +27,7 @@ This project utilizes [Flash](https://getadobe.com/flashplayer/) within the web-
 
 ###Development:
 
-Since we running OSX 10.6.8 for the host Operating System, we installed VirtualBox 4.1.10 r76795 using Ubuntu 11.04 for the Guest Operating System.
-
-The following sources allow for the above configuration:
-
-- http://old-releases.ubuntu.com/releases/11.04
-- https://www.virtualbox.org/wiki/Download_Old_Builds_4_1_pre14
+Since we running OSX 10.6.8 for the host Operating System, we installed [VirtualBox 4.1.10 r76795](http://download.virtualbox.org/virtualbox/4.1.10/VirtualBox-4.1.10-76795-OSX.dmg) using [Ubuntu 11.04](http://old-releases.ubuntu.com/releases/11.04) for the Guest Operating System.  Other versions of [VirtualBox](http://www.virtualbox.org/wiki/Download_Old_Builds_4_1_pre14), or [Ubuntu](http://old-releases.ubuntu.com/releases) may be used, but hasn't exhaustively been tested.
 
 ###Pre-Installation:
 
