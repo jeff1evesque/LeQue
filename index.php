@@ -1,12 +1,8 @@
+<!DOCTYPE html>
 <?php
 
 /**
- * main.php
- *
- * Jeffrey M. Levesque
- * 05/12/2014
- *
- * This file calls the python script to initiate the microphone and begin recording audio, and analyzing input stream.
+ * index.php
  */
 
 $command = escapeshellcmd('python/audio_analyzer.py');
@@ -14,17 +10,16 @@ $output = shell_exec($command);
 echo $output;
 
 ?>
-
 <html>
   <head>
-    <script type='text/javascript' src='assets/js/jquery-1.8.3.min.js'></script>
-    <script type='text/javascript' src='assets/js/swfobject.min.js'></script>
-    <script type='text/javascript' src='assets/js/recorder.min.js'></script>
-    <script type='text/javascript' src='assets/js/recorder_control.min.js'></script>
-    <script type='text/javascript' src='assets/js/recorder_attributes.min.js'></script>
-    <script type='text/javascript' src='assets/js/recorder_initialize.min.js'></script>
+    <script src='assets/js/jquery-1.8.3.min.js'></script>
+    <script src='assets/js/swfobject.min.js'></script>
+    <script src='assets/js/recorder.min.js'></script>
+    <script src='assets/js/recorder_control.min.js'></script>
+    <script src='assets/js/recorder_attributes.min.js'></script>
+    <script src='assets/js/recorder_initialize.min.js'></script>
 
-    <link rel='stylesheet' type='text/css' href='assets/css/main.min.css'>
+    <link rel='stylesheet' href='assets/css/main.min.css'>
   </head>
 
   <body>
