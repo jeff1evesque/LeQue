@@ -87,6 +87,7 @@ deb http://old-releases.ubuntu.com/ubuntu/ natty-proposed main restricted univer
 The following packages need to be installed through terminal in Ubuntu:
 
 ```
+# General Packages:
 sudo apt-get update
 sudo apt-get install inotify-tools
 sudo apt-get install ffmpeg
@@ -94,6 +95,13 @@ sudo apt-get install firefox
 sudo apt-get install flashplugin-installer
 sudo apt-get install git-core
 sudo apt-get install lamp-server^ phpmyadmin
+
+# Sphinx Packages: allow `./autogen.sh`, `sudo make install` for submodules
+sudo apt-get install autoconf
+sudo apt-get install libtool
+sudo apt-get install bison
+sudo apt-get install swig
+sudo apt-get install python-dev
 ```
 
 ###Configuration:
