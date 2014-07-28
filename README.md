@@ -29,30 +29,6 @@ This project utilizes [Flash](https://getadobe.com/flashplayer/) within the web-
 
 Since we running OSX 10.6.8 for the host Operating System, we installed [VirtualBox 4.1.10 r76795](http://download.virtualbox.org/virtualbox/4.1.10/VirtualBox-4.1.10-76795-OSX.dmg) using [Ubuntu 11.04](http://old-releases.ubuntu.com/releases/11.04) for the Guest Operating System.  Other versions of [VirtualBox](http://www.virtualbox.org/wiki/Download_Old_Builds_4_1_pre14), or [Ubuntu](http://old-releases.ubuntu.com/releases) may be used, but hasn't exhaustively been tested.
 
-###Pre-Installation:
-
-####Source List
-
-Since *Ubuntu 11.04* is not supported, create a backup of the  `/etc/apt/sources.list` file:
-
-```
-cp /etc/apt/sources.list /etc/apt/sources.list.backup
-```
-
-Then, change the contents of the original file to the following:
-
-```
-## EOL upgrade sources.list
-# Required
-deb http://old-releases.ubuntu.com/ubuntu/ natty main restricted universe multiverse
-deb http://old-releases.ubuntu.com/ubuntu/ natty-updates main restricted universe multiverse
-deb http://old-releases.ubuntu.com/ubuntu/ natty-security main restricted universe multiverse
-
-# Optional
-deb http://old-releases.ubuntu.com/ubuntu/ natty-backports main restricted universe multiverse
-deb http://old-releases.ubuntu.com/ubuntu/ natty-proposed main restricted universe multiverse
-```
-
 ###Installation:
 
 The following packages need to be installed through terminal in Ubuntu:
