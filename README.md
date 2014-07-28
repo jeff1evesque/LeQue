@@ -180,7 +180,7 @@ Change the file permission for the entire project by issuing the command:
 
 ```
 cd /var/www
-sudo chown -R jeffrey:admin audio-analyzer
+sudo chown -R jeffrey:sudo audio-analyzer
 ```
 
 **Note:** change 'jeffrey' to the user account YOU use.
@@ -189,7 +189,7 @@ Then, with the exception of the `.gitignore` file, ensure `/var/www/audio-analyz
 
 ```
 cd /var/www/audio-analyzer
-sudo chown www-data:admin audio
+sudo chown www-data:sudo audio
 ```
 
 ####Bootable bash script
