@@ -25,11 +25,13 @@ This project utilizes [Flash](https://getadobe.com/flashplayer/) within the web-
 
 ##Requirement
 
-###Development:
-
-Since we running OSX 10.6.8 for the host Operating System, we installed [VirtualBox 4.1.10 r76795](http://download.virtualbox.org/virtualbox/4.1.10/VirtualBox-4.1.10-76795-OSX.dmg) using [Ubuntu 11.04](http://old-releases.ubuntu.com/releases/11.04) for the Guest Operating System.  Other versions of [VirtualBox](http://www.virtualbox.org/wiki/Download_Old_Builds_4_1_pre14), or [Ubuntu](http://old-releases.ubuntu.com/releases) may be used, but hasn't exhaustively been tested.
-
 ###Installation:
+
+This project utilizes any machine that can be partitioned to contain an *Ubuntu Server 14.04* operating system.  The Ubuntu Server 14.04 *[ISO](http://www.ubuntu.com/download/server/thank-you?country=US&version=14.04.1&architecture=amd64)* image coupled with *[UNetbootin](http://unetbootin.sourceforge.net/)*, and *[boot-repair-disk](https://help.ubuntu.com/community/Boot-Repair)* should be adequate for installation.  Each *ISO* file can be made bootable with a partitioned USB flash drive with *UNetbootin*.
+
+During installation (using bootable USB), select *Basic Ubuntu Server*, and *Ubuntu desktop* during the `[!] Software Selection` section.  Also, remember to select `yes` when asked *Install the GRUB boot loader to the master boot record?*
+
+**Note:** If Ubuntu Server 14.04 was not bootable, use *boot-repair-disk*, and reinstall *Grub*.
 
 The following packages need to be installed through terminal in Ubuntu:
 
