@@ -25,11 +25,26 @@ This project utilizes [Flash](https://getadobe.com/flashplayer/) within the web-
 
 ##Requirement
 
-###Development:
+###Installation
 
-Since we running OSX 10.6.8 for the host Operating System, we installed [VirtualBox 4.1.10 r76795](http://download.virtualbox.org/virtualbox/4.1.10/VirtualBox-4.1.10-76795-OSX.dmg) using [Ubuntu 11.04](http://old-releases.ubuntu.com/releases/11.04) for the Guest Operating System.  Other versions of [VirtualBox](http://www.virtualbox.org/wiki/Download_Old_Builds_4_1_pre14), or [Ubuntu](http://old-releases.ubuntu.com/releases) may be used, but hasn't exhaustively been tested.
+####Ubuntu Server 14.04
 
-###Installation:
+Format two USB flash drives as `MS-DOS (FAT)`.  Using [UNetbootin](http://unetbootin.sourceforge.net/), make both USB drives bootable with the following ISO images:
+
+- [Ubuntu Server 14.04](http://www.ubuntu.com/download/server/thank-you?country=US&version=14.04.1&architecture=amd64)
+- [boot-repair-disk](https://help.ubuntu.com/community/Boot-Repair)
+
+Next, ensure the machine being used has been partitioned enough *unallocated space* for the [*Ubuntu Server 14.04*](https://wiki.ubuntu.com/TrustyTahr/ReleaseNotes) operating system.
+
+**Note:** Current development is on a windows machine, hence formatting the latter USB drives to `MS-DOS (FAT)`.
+
+**Note:** The *unallocated space* on the hard-disk does not need to be formatted before installation.
+
+During [installation](http://ubuntuserverguide.com/2014/04/how-to-install-ubuntu-server-14-04-trusty-tahr.html) (boot-up with the Ubuntu USB), select `Install`.  At the `[!] Partition disks` section, select `Manual`, and carefully partition *only* the *unallocated space* on the hard-disk.  This is important if the overall machine is a multiboot.  The partitioning process will create two partitions, `Ext4`, and `SWAP` from the *unallocated space*.  Upon reaching the `[!] Software Selection` section, select `Basic Ubuntu Server`, and `Ubuntu desktop`. Also, select `yes` when asked `Install the GRUB boot loader to the master boot record?`
+
+**Note:** If Ubuntu Server 14.04 was not bootable on the hard disk after installation, use the boot-repair-disk bootable USB, and *reinstall Grub*.
+
+####Linux Packages
 
 The following packages need to be installed through terminal in Ubuntu:
 
