@@ -209,6 +209,47 @@ We will automate [Grunt's](https://gruntjs.com) task management, which will enco
 
 More information regarding setting-up [Grunt](https://gruntjs.com), can be found within the [README.md](https://github.com/jeff1evesque/grunt/blob/master/README.md) file from the [Grunt](http://github.com/jeff1evesque/grunt) repository.
 
+####Boot Sequence
+
+This application utilizes [GRUB2](http://wiki.gentoo.org/wiki/GRUB2), a bootloader program, which allows the selection of partition (on the hard disk) to boot from.  Modifying the *grub configuration file* allows the boot sequence to change.  This is done by modifying the order of files contained within `/etc/grub.d`:
+
+```
+$ cd /etc/grub.d
+$ ls
+00_header        10_linux      20_memtest86+  30_uefi-firmware  41_custom
+05_debian_theme  20_linux_xen  30_os-prober   40_custom         README
+```
+
+Operating systems associated with lower prefixes with be higher in the boot selection sequence.  In the case where two partitions exist - Windows 7, and Ubuntu, `30_os-prober` will be associated to the Windows 7 partition.  Since, *linux* is prefixed with a lower number, the boot sequence at start-up will list Ubuntu higher in the list, and perhaps default to it during start-up.  One way to change this sequence, is to rename `30_os-prober` as follows:
+
+```
+$ cd /etc/grub.d
+$ sudo mv 30_os-prober 09_os-prober
+$ ls
+00_header        09_os-prober  20_linux_xen   30_uefi-firmware  41_custom
+05_debian_theme  10_linux      20_memtest86+  40_custom         README
+$ sudo update-grub
+```
+
+The last command above, generates the *grub configuration file*.  When the hard-disk is started, we may see the following on the monitor:
+
+```
+GNU GRUB version 2.02^beta2-9ubuntu1
+
+Windows 7 (loader) (on /dev/sda1)
+Windows 7 (loader) (on /dev/sda2)
+Ubuntu
+Advanced options for Ubuntu
+Memory test (memtest86+)
+Memory test (memtest86+, serial console 115200)
+
+Use the [up arrow] and [down arrow] keys to select which entry is highlighted.
+Press enter to boot the selected OS.  `e' to edit the commands
+before booting or `c' for a command-line.
+```
+
+**Note:** Without the above modifications, the *Ubuntu* option would preceed both *Windows 7* options (both point to the same partition).
+
 ## Testing / Execution
 
 ###Test Scripts:
