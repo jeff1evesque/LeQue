@@ -170,7 +170,7 @@ and, add respective directories to the `haystack` array.
 
 ####Submodule Installation
 
-We need to install our *Sphinx* related submodules:
+#####Sphinx
 
 ```
 cd /var/www/audio-analyzer/pocketsphinx/sphinxbase
@@ -185,6 +185,12 @@ cd ../sphinxtrain
 ./autogen.sh
 sudo make install
 ```
+
+#####Autobahn
+
+In order to allow browsers to stream audio to the server, a websocket server is needed.  This project uses [Autobahn](http://http://autobahn.ws/), an open source project that provides *WebSocket*, and *Web Application Messaging Protocols* (WAMP) protocol to achieve audio streaming.
+
+More information regarding setting-up [Autobahn](http://autobahn.ws/), and the requirements of streaming audio from the browser to the server can be found within the [README.md](https://github.com/jeff1evesque/whisper/blob/master/README.md) file from the [whisper](https://github.com/jeff1evesque/whisper) repository.
 
 ####Automation
 
