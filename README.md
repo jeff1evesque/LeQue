@@ -206,7 +206,7 @@ cd /var/www/audio-analyzer/bash && ./bash_loader > /dev/null 2>&1 &
 exit 0
 ```
 
-The above configuration may need the [rc.local](http://www.linux.com/news/enterprise/systems-management/8116-an-introduction-to-services-runlevels-and-rcd-scripts) to be started:
+The above configuration may require starting [rc.local](http://www.linux.com/news/enterprise/systems-management/8116-an-introduction-to-services-runlevels-and-rcd-scripts):
 
 ```
 sudo /etc/init.d/rc.local start
