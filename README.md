@@ -98,7 +98,7 @@ git config --global user.email "YOUR-EMAIL@DOMAIN.COM"
 git config --global user.name "YOUR-NAME"
 ```
 
-Fork this project in your GitHub account, then clone your repository of this project within Ubuntu VM:
+Fork this project in your GitHub account, then clone your repository:
 
 ```
 sudo git clone https://[YOUR-USERNAME]@github.com/[YOUR-USERNAME]/audio-analyzer.git [PROJECT-NAME]
