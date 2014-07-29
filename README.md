@@ -229,7 +229,7 @@ $ ls
 05_debian_theme  20_linux_xen  30_os-prober   40_custom         README
 ```
 
-Operating systems associated with lower prefixes with be higher in the boot selection sequence.  In the case where two partitions exist - Windows 7, and Ubuntu, `30_os-prober` will be associated to the Windows 7 partition.  Since, *linux* is prefixed with a lower number, the boot sequence at start-up will list Ubuntu higher in the list, and perhaps default to it during start-up.  One way to change this sequence, is to rename `30_os-prober` as follows:
+Operating systems associated with lower prefixes will be higher in the boot selection sequence.  In the case where two partitions exist - Windows 7, and Ubuntu, `30_os-prober` will be associated to the Windows 7 partition.  Since, *linux* is prefixed with a lower number, the boot sequence at start-up will list Ubuntu higher in the list, and perhaps default to it during start-up.  One way to change this sequence, is to rename `30_os-prober` as follows:
 
 ```
 $ cd /etc/grub.d
