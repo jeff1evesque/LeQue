@@ -52,7 +52,7 @@ The following packages need to be installed through terminal in Ubuntu:
 # General Packages:
 sudo apt-get update
 sudo apt-get install inotify-tools
-sudo apt-get install ffmpeg
+sudo apt-get install libav-tools
 sudo apt-get install firefox
 sudo apt-get install flashplugin-installer
 sudo apt-get install git-core
