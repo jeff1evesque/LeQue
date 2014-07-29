@@ -30,7 +30,9 @@ inotifywait ../audio/recording -m -e close_write -e move |
       # -b, ensures bitrate (kbps)
       # -ar ensures sample rate (hz)
       # -y, overwrites existing file
-      avconv -i ../audio/recording/"$file" -acodec pcm_s16le -ac 1 -ar 16000 -y ../audio/recording_converted/"$filename"
+      avconv -i ../audio/recording/"$file" -acodec pcm_s16le -ac 1 -ar 16000 -y ../audio/recording_converted/"$file"
+
+      mv ../audio/recording_converted/"$file" ../audio/recording_converted/"$filename"
 
     fi
   done
