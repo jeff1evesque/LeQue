@@ -25,13 +25,26 @@ This project utilizes [Flash](https://getadobe.com/flashplayer/) within the web-
 
 ##Requirement
 
-###Installation:
+###Installation
 
-This project utilizes any machine that can be partitioned to contain an *Ubuntu Server 14.04* operating system.  The Ubuntu Server 14.04 *[ISO](http://www.ubuntu.com/download/server/thank-you?country=US&version=14.04.1&architecture=amd64)* image coupled with *[UNetbootin](http://unetbootin.sourceforge.net/)*, and *[boot-repair-disk](https://help.ubuntu.com/community/Boot-Repair)* should be adequate for installation.  Each *ISO* file can be made bootable with a partitioned USB flash drive with *UNetbootin*.
+####Ubuntu Server 14.04
 
-During installation (using bootable USB), select *Basic Ubuntu Server*, and *Ubuntu desktop* during the `[!] Software Selection` section.  Also, remember to select `yes` when asked *Install the GRUB boot loader to the master boot record?*
+For this project, format two USB flash drives as `MS-DOS (FAT)`.  Using [UNetbootin](http://unetbootin.sourceforge.net/), make both USB drives bootable with the following ISO images:
 
-**Note:** If Ubuntu Server 14.04 was not bootable, use *boot-repair-disk*, and reinstall *Grub*.
+- [Ubuntu Server 14.04](http://www.ubuntu.com/download/server/thank-you?country=US&version=14.04.1&architecture=amd64)
+- [boot-repair-disk](https://help.ubuntu.com/community/Boot-Repair)
+
+Next, ensure the machine being used has been partitioned enough *unallocated space* for the [*Ubuntu Server 14.04*](https://wiki.ubuntu.com/TrustyTahr/ReleaseNotes) operating system.
+
+**Note:** The development for this project is on a windows machine, hence formatting the latter USB drives to `MS-DOS (FAT)`.
+
+**Note:** No need to partition the *unallocated space* on the hard-disk.
+
+During installation (boot-up with the Ubuntu ISO USB), select `Install`.  At the `[!] Software Selection` section, select `Basic Ubuntu Server`, and `Ubuntu desktop`. Also, select `yes` when asked `Install the GRUB boot loader to the master boot record?`
+
+**Note:** If Ubuntu Server 14.04 was not bootable on the hard disk after installation, use the boot-repair-disk bootable USB, and *reinstall Grub*.
+
+####Linux Packages
 
 The following packages need to be installed through terminal in Ubuntu:
 
