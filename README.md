@@ -209,7 +209,7 @@ We will automate [Grunt's](https://gruntjs.com) task management, which will enco
 
 More information regarding setting-up [Grunt](https://gruntjs.com), can be found within the [README.md](https://github.com/jeff1evesque/grunt/blob/master/README.md) file from the [Grunt](http://github.com/jeff1evesque/grunt) repository.
 
-####GRUB
+####Boot Sequence
 
 This application utilizes [GRUB2](http://wiki.gentoo.org/wiki/GRUB2), a bootloader program, which allows the selection of partition (on the hard disk) to boot from.  Modifying the *grub configuration file* allows the boot sequence to change.  This is done by modifying the order of files contained within `/etc/grub.d`:
 
