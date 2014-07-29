@@ -5,7 +5,7 @@
 # create directory if doesn't exist
 mkdir -p ../audio/recording_converted
 
-# convert wav file to correct format: 16 bit, 16 kHz, mono
+# watch the 'recording/' subdirectory for changes
 inotifywait ../audio/recording -m -e close_write -e move |
 
   while read path action file; do
@@ -14,7 +14,7 @@ inotifywait ../audio/recording -m -e close_write -e move |
     audio_info=$(ffmpeg -i "$file" 2>&1 | grep 'Stream')
   # audio configuration
     audio_criteria="Audio: pcm_s16le, 16000 Hz, 1 channels"
-  # filename of modified file
+  # filename (without extension) of modified file
     filename="${file##*/}"
 
   # does modified file contain required 'audio configuration'
@@ -24,13 +24,13 @@ inotifywait ../audio/recording -m -e close_write -e move |
 
     else
 
-    # Convert audio wav file:
+    # Convert audio wav file to correct format: 16 bit, 16 kHz, mono:
       # -acodec pcm_s161e, ensures 16 bit audio
       # -ac 1, ensures mono (1 audio channel)
-      # -ab, ensures bit rate (kbps)
+      # -b, ensures bitrate (kbps)
       # -ar ensures sample rate (hz)
       # -y, overwrites existing file
-      ffmpeg -i ../audio/recording/"$file" -acodec pcm_s16le -ac 1 -ar 16000 -y ../audio/recording_converted/"$filename"
+      avconv -i ../audio/recording/"$file" -acodec pcm_s16le -ac 1 -ar 16000 -y ../audio/recording_converted/"$filename"
 
     fi
   done
