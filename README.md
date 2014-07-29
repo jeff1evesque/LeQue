@@ -170,7 +170,7 @@ and, add respective directories to the `haystack` array.
 
 ####Submodule Installation
 
-We need to install our *Sphinx* related submodules:
+#####Sphinx
 
 ```
 cd /var/www/audio-analyzer/pocketsphinx/sphinxbase
@@ -186,11 +186,17 @@ cd ../sphinxtrain
 sudo make install
 ```
 
+#####Autobahn
+
+In order to allow browsers to stream audio to the server, a websocket server is needed.  This project uses [Autobahn](http://http://autobahn.ws/), an open source project that provides *WebSocket*, and *Web Application Messaging Protocols* (WAMP) protocol to achieve audio streaming.
+
+More information regarding setting-up [Autobahn](http://autobahn.ws/), and the requirements of streaming audio from the browser to the server can be found within the [README.md](https://github.com/jeff1evesque/whisper/blob/master/README.md) file from the [whisper](https://github.com/jeff1evesque/whisper) repository.
+
 ####Automation
 
 #####Grunt
 
-We will automate [Grunt's](https://gruntjs.com) task management, which will encompass tools such as [Sass](https://github.com/gruntjs/grunt-contrib-sass), [Uglify](https://github.com/gruntjs/grunt-contrib-uglify), [Imagemin](https://github.com/gruntjs/grunt-contrib-imagemin), and [Modernizr](https://github.com/Modernizr/grunt-modernizr).  It requires setup only once within each web-appliation utilizing its tools.
+We will automate [Grunt's](https://gruntjs.com) task management, which will encompass tools such as [Sass](https://github.com/gruntjs/grunt-contrib-sass), [Uglify](https://github.com/gruntjs/grunt-contrib-uglify), [Imagemin](https://github.com/gruntjs/grunt-contrib-imagemin), and [Modernizr](https://github.com/Modernizr/grunt-modernizr).  It requires setup only once within each web-application utilizing its tools.
 
 More information regarding setting-up [Grunt](https://gruntjs.com), can be found within the [README.md](https://github.com/jeff1evesque/grunt/blob/master/README.md) file from the [Grunt](http://github.com/jeff1evesque/grunt) repository.
 
