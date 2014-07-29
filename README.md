@@ -40,7 +40,7 @@ Next, ensure the machine being used has been partitioned enough *unallocated spa
 
 **Note:** The *unallocated space* on the hard-disk does not need to be formatted before installation.
 
-During [installation](http://ubuntuserverguide.com/2014/04/how-to-install-ubuntu-server-14-04-trusty-tahr.html) (boot-up with the Ubuntu ISO USB), select `Install`.  At the `[!] Partition disks` section, select `Manual`, and carefully partition *only* the *unallocated space* on the hard-disk.  This is important if the overall machine is a multiboot.  The partitioning process will create two partitions, `Ext4`, and `SWAP` from the *unallocated space*.  Upon reaching the `[!] Software Selection` section, select `Basic Ubuntu Server`, and `Ubuntu desktop`. Also, select `yes` when asked `Install the GRUB boot loader to the master boot record?`
+During [installation](http://ubuntuserverguide.com/2014/04/how-to-install-ubuntu-server-14-04-trusty-tahr.html) (boot-up with the Ubuntu USB), select `Install`.  At the `[!] Partition disks` section, select `Manual`, and carefully partition *only* the *unallocated space* on the hard-disk.  This is important if the overall machine is a multiboot.  The partitioning process will create two partitions, `Ext4`, and `SWAP` from the *unallocated space*.  Upon reaching the `[!] Software Selection` section, select `Basic Ubuntu Server`, and `Ubuntu desktop`. Also, select `yes` when asked `Install the GRUB boot loader to the master boot record?`
 
 **Note:** If Ubuntu Server 14.04 was not bootable on the hard disk after installation, use the boot-repair-disk bootable USB, and *reinstall Grub*.
 
