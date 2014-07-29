@@ -154,21 +154,6 @@ cd /var/www/audio-analyzer
 sudo chown www-data:sudo audio
 ```
 
-####Bootable bash script
-
-`/etc/rc.local` allows us to run bash-scripts during apache2 boot.  Since `bash_loader` loads all our required bash-scripts, we will run this script.  So, add the following lines:
-
-```
-# run 'bash_loader' at start-up for '/var/www/audio-analyzer' application (edited by JL)
-cd /var/www/audio-analyzer/bash && ./bash_loader > /dev/null 2>&1 &
-```
-
-To ensure the above modification is working:
-
-```
-sudo /etc/init.d/rc.local start
-```
-
 ####Local Ignore Rules
 
 We do not want to commit files, or directories within our git *submodules*.  For this reason, we created a bash-script that will apply git *local ignore rules*, which will ignore anything contained within the specified directories.
@@ -208,6 +193,24 @@ sudo make install
 We will automate [Grunt's](https://gruntjs.com) task management, which will encompass tools such as [Sass](https://github.com/gruntjs/grunt-contrib-sass), [Uglify](https://github.com/gruntjs/grunt-contrib-uglify), [Imagemin](https://github.com/gruntjs/grunt-contrib-imagemin), and [Modernizr](https://github.com/Modernizr/grunt-modernizr).  It requires setup only once within each web-appliation utilizing its tools.
 
 More information regarding setting-up [Grunt](https://gruntjs.com), can be found within the [README.md](https://github.com/jeff1evesque/grunt/blob/master/README.md) file from the [Grunt](http://github.com/jeff1evesque/grunt) repository.
+
+#####Bash Scripts
+
+Configuring `/etc/rc.local` allows bash-scripts to be run during [apache2](https://help.ubuntu.com/10.04/serverguide/httpd.html) boot.  Since `bash_loader` loads all the required bash-scripts, all required scripts can be automated by adding the following to `/etc/rc.local`:
+
+```
+...
+# run 'bash_loader' at start-up for '/var/www/audio-analyzer' application (edited by JL)
+cd /var/www/audio-analyzer/bash && ./bash_loader > /dev/null 2>&1 &
+
+exit 0
+```
+
+The above configuration may need the [rc.local](http://www.linux.com/news/enterprise/systems-management/8116-an-introduction-to-services-runlevels-and-rcd-scripts) to be started:
+
+```
+sudo /etc/init.d/rc.local start
+```
 
 ####Boot Sequence
 
