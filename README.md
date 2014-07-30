@@ -152,7 +152,7 @@ cd ../sphinxtrain/
 ./autogen.sh
 sudo make install
 
-# Extract CMUSphinx Acoustic, and Language Models
+# Extract Sphinx Acoustic, and Language Models
 cd ../../
 wget http://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/US%20English%20Generic%20Acoustic%20Model/en-us.tar.gz/download -O en-us.tar.gz
 sudo tar -zxvf en-us.tar.gz -C /usr/local/share/pocketsphinx/model/hmm/
