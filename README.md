@@ -128,10 +128,10 @@ The above two commands will update submodules.  If they are already initialized,
 ```
 cd /var/www/html/audio-analyzer/
 git checkout -b NEW_BRANCH master
-cd [YOUR_SUBMODULE]
+cd [YOUR_SUBMODULE]/
 git checkout master
 git pull
-cd ..
+cd ../
 git status
 ```
 
