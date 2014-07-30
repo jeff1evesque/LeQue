@@ -139,6 +139,7 @@ sudo chown www-data:sudo audio
 #####Sphinx
 
 ```
+# Install Sphinx Engine(s)
 cd /var/www/html/audio-analyzer/pocketsphinx/sphinxbase/
 ./autogen.sh
 sudo make install
@@ -150,7 +151,18 @@ sudo make install
 cd ../sphinxtrain/
 ./autogen.sh
 sudo make install
+
+# Extract Sphinx Acoustic, and Language Models
+cd ../../
+wget http://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/US%20English%20Generic%20Acoustic%20Model/en-us.tar.gz/download -O en-us.tar.gz
+sudo tar -zxvf en-us.tar.gz -C /usr/local/share/pocketsphinx/model/hmm/
+sudo rm en-us.tar.gz
+
+wget http://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/US%20English%20Generic%20Language%20Model/cmusphinx-5.0-en-us.lm.dmp/download -O cmusphinx-5.0-en-us.lm.dmp
+sudo mv cmusphinx-5.0-en-us.lm.dmp /usr/local/share/pocketsphinx/model/lm/
 ```
+
+More information regarding setting-up [PocketSphinx](http://cmusphinx.sourceforge.net/wiki/tutorialpocketsphinx), can be found within the [README.md](https://github.com/jeff1evesque/pocketsphinx/blob/master/README.md) file from the [jeff1evesque/pocketsphinx](https://github.com/jeff1evesque/pocketsphinx/) repository.
 
 #####Autobahn
 
