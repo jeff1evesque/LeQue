@@ -186,8 +186,8 @@ Configuring `/etc/rc.local` allows bash-scripts to be run during [apache2](https
 
 ```
 ...
-# run 'bash_loader' at start-up for '/var/www/audio-analyzer' application (edited by JL)
-cd /var/www/audio-analyzer/bash && ./bash_loader > /dev/null 2>&1 &
+# run 'bash_loader' at start-up for '/var/www/html/audio-analyzer/' application (edited by JL)
+cd /var/www/html/audio-analyzer/bash/ && ./bash_loader > /dev/null 2>&1 &
 
 exit 0
 ```
