@@ -174,15 +174,15 @@ and, add respective directories to the `haystack` array.
 #####Sphinx
 
 ```
-cd /var/www/html/audio-analyzer/pocketsphinx/sphinxbase
+cd /var/www/html/audio-analyzer/pocketsphinx/sphinxbase/
 ./autogen.sh
 sudo make install
 
-cd ../pocketsphinx
+cd ../pocketsphinx/
 ./autogen.sh
 sudo make install
 
-cd ../sphinxtrain
+cd ../sphinxtrain/
 ./autogen.sh
 sudo make install
 ```
@@ -224,7 +224,7 @@ sudo /etc/init.d/rc.local start
 This application utilizes [GRUB2](http://wiki.gentoo.org/wiki/GRUB2), a bootloader program, which allows the selection of partition (on the hard disk) to boot from.  Modifying the *grub configuration file* allows the boot sequence to change.  This is done by modifying the order of files contained within `/etc/grub.d`:
 
 ```
-$ cd /etc/grub.d
+$ cd /etc/grub.d/
 $ ls
 00_header        10_linux      20_memtest86+  30_uefi-firmware  41_custom
 05_debian_theme  20_linux_xen  30_os-prober   40_custom         README
@@ -233,7 +233,7 @@ $ ls
 Operating systems associated with lower prefixes will be higher in the boot selection sequence.  In the case where two partitions exist - Windows 7, and Ubuntu, `30_os-prober` will be associated to the Windows 7 partition.  Since, *linux* is prefixed with a lower number, the boot sequence at start-up will list Ubuntu higher in the list, and perhaps default to it during start-up.  One way to change this sequence, is to rename `30_os-prober` as follows:
 
 ```
-$ cd /etc/grub.d
+$ cd /etc/grub.d/
 $ sudo mv 30_os-prober 09_os-prober
 $ ls
 00_header        09_os-prober  20_linux_xen   30_uefi-firmware  41_custom
