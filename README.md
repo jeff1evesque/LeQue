@@ -68,27 +68,6 @@ sudo apt-get install python-dev
 
 ###Configuration:
 
-####LAMP server
-
-Recall earlier that we installed our LAMP server with phpMyAdmin.  We need to modify `apache2.conf` file in order to access phpMyAdmin:
-
-```
-sudo pico /etc/apache2/apache2.conf
-```
-
-by adding the following to the end of the file:
-
-```
-# Allow access to phpMyAdmin (edited by JL)
-Include /etc/phpmyadmin/apache.conf
-```
-
-Then, restart apache:
-
-```
-sudo service apache2 restart
-```
-
 ####GIT
 
 Since we installed GIT earlier, we have to remember to configure our GIT user.  Only change the values within the double quotes (remove the quotes for the email):
