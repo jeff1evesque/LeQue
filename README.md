@@ -241,7 +241,7 @@ before booting or `c' for a command-line.
 
 ####Domain Name
 
-Webservers need to define their own name.  Since this project utilizes [Apache2](http://httpd.apache.org/docs/2.0/) as one of its webservers, the servers fully qualified domain name, is defined within `/etc/apache2.conf` file as follows:
+Webservers need to define their own name.  Since this project utilizes [Apache2](http://httpd.apache.org/docs/2.0/) as one of its webservers, the `/etc/apache2.conf` file should include the following:
 
 ```
 ...
@@ -250,7 +250,7 @@ ServerName localhost
 ...
 ```
 
-Providing an identification for the server is useful for various cases (i.e. self-referential redirects), and eliminates repetitive messages when *starting*, and *restarting* the server:
+Providing server identification is useful for various cases (i.e. self-referential redirects), and eliminates repetitive messages when *starting*, and *restarting* the server:
 
 ```
 $ sudo /etc/init.d/apache2 restart
