@@ -241,7 +241,7 @@ before booting or `c' for a command-line.
 
 ####Domain Name
 
-Webservers need to define their own name.  Since this project utilizes [Apache2](http://httpd.apache.org/docs/2.0/) as one of its webservers, the `/etc/apache2.conf` file should include the following:
+Webservers need to define their own server name.  Since this project utilizes [Apache2](http://httpd.apache.org/docs/2.0/) as one of its webservers, the `/etc/apache2.conf` file should include the following lines:
 
 ```
 ...
@@ -258,7 +258,7 @@ $ sudo /etc/init.d/apache2 restart
 [Wed Jul 30 08:48:12.303006 2050] [alias:warn] [pid 5457] AH00671: The Alias directive in /etc/phpmyadmin/apache.conf at line 3 will probably never match because it overlaps an earlier Alias.
 ```
 
-It is important to remember that `apache2.conf` will need to be adjusted when the server has a *[true identity](http://wiki.apache.org/httpd/CouldNotDetermineServerName)* (other than the define *localhost*).
+**Note:** It is important to remember that `apache2.conf` will need to be adjusted when the server has a *[true identity](http://wiki.apache.org/httpd/CouldNotDetermineServerName)* (other than the define *localhost*).
 
 ## Testing / Execution
 
