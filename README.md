@@ -134,20 +134,6 @@ cd /var/www/html/audio-analyzer/
 sudo chown www-data:sudo audio
 ```
 
-####Local Ignore Rules
-
-We do not want to commit files, or directories within our git *submodules*.  For this reason, we created a bash-script that will apply git *local ignore rules*, which will ignore anything contained within the specified directories.
-
-To begin ignoring specific directories (submodules), simply open the following file:
-
-```
-pico /var/www/html/audio-analyzer/bash/git/local_ignore_rules
-```
-
-and, add respective directories to the `haystack` array.
-
-**Note:** each repository (or submodule) has it's own `.git/info/exclude` file.
-
 ####Submodule Installation
 
 #####Sphinx
