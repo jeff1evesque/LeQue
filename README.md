@@ -101,13 +101,14 @@ git config --global user.name "YOUR-NAME"
 Fork this project in your GitHub account, then clone your repository:
 
 ```
+cd /var/www/html/
 sudo git clone https://[YOUR-USERNAME]@github.com/[YOUR-USERNAME]/audio-analyzer.git [PROJECT-NAME]
 ```
 
 Then, add the *Remote Upstream*, this way we can pull any merged pull-requests:
 
 ```
-cd /var/www/audio-analyzer
+cd /var/www/html/audio-analyzer/
 git remote add upstream https://github.com/[YOUR-USERNAME]/[REPOSITORY-NAME].git
 ```
 
@@ -125,7 +126,7 @@ sudo git submodule update
 The above two commands will update submodules.  If they are already initialized, then the latter command will suffice. Then, we need to pull the code-base into the initialized submodule directory:
 
 ```
-cd /var/www/audio-analyzer
+cd /var/www/html/audio-analyzer/
 git checkout -b NEW_BRANCH master
 cd [YOUR_SUBMODULE]
 git checkout master
@@ -141,16 +142,16 @@ Now, commit and merge the submodule changes.
 Change the file permission for the entire project by issuing the command:
 
 ```
-cd /var/www
+cd /var/www/html/
 sudo chown -R jeffrey:sudo audio-analyzer
 ```
 
 **Note:** change 'jeffrey' to the user account YOU use.
 
-Then, with the exception of the `.gitignore` file, ensure `/var/www/audio-analyzer/audio` is an empty directory, so that we can change it's ownership:
+Then, with the exception of the `.gitignore` file, ensure `/var/www/html/audio-analyzer/audio` is an empty directory, so that we can change it's ownership:
 
 ```
-cd /var/www/audio-analyzer
+cd /var/www/html/audio-analyzer/
 sudo chown www-data:sudo audio
 ```
 
@@ -161,7 +162,7 @@ We do not want to commit files, or directories within our git *submodules*.  For
 To begin ignoring specific directories (submodules), simply open the following file:
 
 ```
-/var/www/audio-analyzer/bash/git/local_ignore_rules
+pico /var/www/html/audio-analyzer/bash/git/local_ignore_rules
 ```
 
 and, add respective directories to the `haystack` array.
@@ -173,7 +174,7 @@ and, add respective directories to the `haystack` array.
 #####Sphinx
 
 ```
-cd /var/www/audio-analyzer/pocketsphinx/sphinxbase
+cd /var/www/html/audio-analyzer/pocketsphinx/sphinxbase
 ./autogen.sh
 sudo make install
 
@@ -266,7 +267,7 @@ before booting or `c' for a command-line.
 Before translating audio files, it is possible to perform a few tests to gauge the [PocketSphinx](http://cmusphinx.sourceforge.net/wiki/tutorialpocketsphinx) translation engine.  For example, the following script tests the command `pocketsphinx_continuous` against `sample.wav` file from the *pocketsphinx* submodule:
 
 ```
-cd /var/www/audio-analyzer/bash/tests
+cd /var/www/html/audio-analyzer/bash/tests/
 ./test_pocketsphinx_continuous
 ```
 
@@ -275,14 +276,14 @@ cd /var/www/audio-analyzer/bash/tests
 The execution of the above the script will produce a text-file containing the text translation of `sample.wav`:
 
 ```
-cd /var/www/audio-analyzer/audio/recording_text/
+cd /var/www/html/audio-analyzer/audio/recording_text/
 pico test_sample.txt
 ```
 
 A corresponding log-file is also created:
 
 ```
-cd /var/www/audio-analyzer/bash/logs/
+cd /var/www/html/audio-analyzer/bash/logs/
 pico log_test_pocketsphinx_continuous
 ```
 
@@ -317,20 +318,20 @@ ngram_search_fwdtree.c(xxx): TOTAL fwdtxxxx xx.xx wall x.xxx
 If *bash automation* is being implemented, information pertaining to *Translation Time* can be acquired from `log_bash_loader`:
 
 ```
-/var/www/audio-analyzer/bash/logs/
+/var/www/html/audio-analyzer/bash/logs/
 pico log_bash_loader
 ```
 
 If `test_pocketsphinx_continuous` was executed:
 
 ```
-cd /var/www/audio-analyzer/bash/tests/
+cd /var/www/html/audio-analyzer/bash/tests/
 ./test_pocketsphinx_continuous
 ```
 
 then, the *translation time* information can be found within `log_test_pocketsphinx_continuous`:
 
 ```
-/var/www/audio-analyzer/bash/logs/
+/var/www/html/audio-analyzer/bash/logs/
 pico log_text_pocketsphinx_continuous
 ```
