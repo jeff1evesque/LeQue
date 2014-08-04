@@ -21,11 +21,9 @@ Speech recognition (SR) is the translation of spoken words into text.
 
 This project utilizes [Flash](https://getadobe.com/flashplayer/) within the web-browser in order to access the users microphone.  When a recording is saved, it is reconfigured to a `16 bit, 16 kHz, mono` if it has a different format.  This reconfigured *wav* file, is then converted to text using [PocketSphinx](http://cmusphinx.sourceforge.net/wiki/tutorialpocketsphinx), which allows our Python scripts to parse the converted text into executable commands.  This *Bash Automation* occurs automatically, and triggered when an audio file is saved either through the web-application, or by manually saving a *wav* file into the `recording/` subdirectory.
 
-##Requirement
+##Installation
 
-###Installation
-
-####Ubuntu Server 14.04
+###Ubuntu Server 14.04
 
 Format two USB flash drives as `MS-DOS (FAT)`.  Using [UNetbootin](http://unetbootin.sourceforge.net/), make both USB drives bootable with the following ISO images:
 
@@ -42,7 +40,7 @@ During [installation](http://ubuntuserverguide.com/2014/04/how-to-install-ubuntu
 
 **Note:** If Ubuntu Server 14.04 was not bootable on the hard disk after installation, use the boot-repair-disk bootable USB, and *reinstall Grub*.
 
-####Linux Packages
+###Linux Packages
 
 The following packages need to be installed through terminal in Ubuntu:
 
@@ -64,9 +62,9 @@ sudo apt-get install swig
 sudo apt-get install python-dev
 ```
 
-###Configuration
+##Configuration
 
-####GIT
+###GIT
 
 Since we installed GIT earlier, we have to remember to configure our GIT user.  Only change the values within the double quotes (remove the quotes for the email):
 
@@ -89,7 +87,7 @@ cd /var/www/html/leque/
 git remote add upstream https://github.com/[YOUR-USERNAME]/[REPOSITORY-NAME].git
 ```
 
-#####GIT Submodule
+####GIT Submodule
 
 We need to initialize our git *submodules*:
 
@@ -114,7 +112,7 @@ git status
 
 Now, commit and merge the submodule changes.
 
-####File Permission
+###File Permission
 
 Change the file permission for the entire project by issuing the command:
 
@@ -132,9 +130,9 @@ cd /var/www/html/leque/
 sudo chown www-data:sudo audio
 ```
 
-####Submodule Installation
+###Submodule Installation
 
-#####Sphinx
+####Sphinx
 
 ```
 # Install Sphinx Engine(s)
@@ -162,21 +160,21 @@ sudo mv cmusphinx-5.0-en-us.lm.dmp /usr/local/share/pocketsphinx/model/lm/
 
 More information regarding setting-up [PocketSphinx](http://cmusphinx.sourceforge.net/wiki/tutorialpocketsphinx), can be found within the [README.md](https://github.com/jeff1evesque/pocketsphinx/blob/master/README.md) file from the [jeff1evesque/pocketsphinx](https://github.com/jeff1evesque/pocketsphinx/) repository.
 
-#####Autobahn
+####Autobahn
 
 In order to allow browsers to stream audio to the server, a websocket server is needed.  This project uses [Autobahn](http://http://autobahn.ws/), an open source project that provides *WebSocket*, and *Web Application Messaging Protocols* (WAMP) protocol to achieve audio streaming.
 
 More information regarding setting-up [Autobahn](http://autobahn.ws/), and the requirements of streaming audio from the browser to the server can be found within the [README.md](https://github.com/jeff1evesque/whisper/blob/master/README.md) file from the [whisper](https://github.com/jeff1evesque/whisper) repository.
 
-####Automation
+###Automation
 
-####Grunt
+###Grunt
 
 We will automate [Grunt's](https://gruntjs.com) task management, which will encompass tools such as [Sass](https://github.com/gruntjs/grunt-contrib-sass), [Uglify](https://github.com/gruntjs/grunt-contrib-uglify), [Imagemin](https://github.com/gruntjs/grunt-contrib-imagemin), and [Modernizr](https://github.com/Modernizr/grunt-modernizr).  It requires setup only once within each web-application utilizing its tools.
 
 More information regarding setting-up [Grunt](https://gruntjs.com), can be found within the [README.md](https://github.com/jeff1evesque/grunt/blob/master/README.md) file from the [Grunt](http://github.com/jeff1evesque/grunt) repository.
 
-#####Bash Scripts
+####Bash Scripts
 
 Configuring `/etc/rc.local` allows bash-scripts to be run during [apache2](https://help.ubuntu.com/10.04/serverguide/httpd.html) boot.  Since `bash_loader` loads all the required bash-scripts, all required scripts can be automated by adding the following to `/etc/rc.local`:
 
@@ -194,7 +192,7 @@ The above configuration may require starting [rc.local](http://www.linux.com/new
 sudo /etc/init.d/rc.local start
 ```
 
-####Boot Sequence
+###Boot Sequence
 
 This application utilizes [GRUB2](http://wiki.gentoo.org/wiki/GRUB2), a bootloader program, which allows the selection of partition (on the hard disk) to boot from.  Modifying the *grub configuration file* allows the boot sequence to change.  This is done by modifying the order of files contained within `/etc/grub.d`:
 
@@ -235,7 +233,7 @@ before booting or `c' for a command-line.
 
 **Note:** Without the above modifications, the *Ubuntu* option would preceed both *Windows 7* options (both point to the same partition).
 
-####Domain Name
+###Domain Name
 
 Webservers need to define their own server name.  Since this project utilizes [Apache2](http://httpd.apache.org/docs/2.0/) as one of its webservers, the `/etc/apache2.conf` file should include the following lines:
 
