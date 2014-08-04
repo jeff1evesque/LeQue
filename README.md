@@ -168,7 +168,7 @@ More information regarding setting-up [Autobahn](http://autobahn.ws/), and the r
 
 ###Automation
 
-###Grunt
+####Grunt
 
 We will automate [Grunt's](https://gruntjs.com) task management, which will encompass tools such as [Sass](https://github.com/gruntjs/grunt-contrib-sass), [Uglify](https://github.com/gruntjs/grunt-contrib-uglify), [Imagemin](https://github.com/gruntjs/grunt-contrib-imagemin), and [Modernizr](https://github.com/Modernizr/grunt-modernizr).  It requires setup only once within each web-application utilizing its tools.
 
