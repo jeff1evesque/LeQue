@@ -1,4 +1,4 @@
-Auditory Analyzer
+LeQue
 =====================
 
 The intention of this *web-application* is to allow the visitor to provide auditory commands, which get executed on the server.  The languages used for this project includes:
@@ -81,13 +81,13 @@ Fork this project in your GitHub account, then clone your repository:
 
 ```
 cd /var/www/html/
-sudo git clone https://[YOUR-USERNAME]@github.com/[YOUR-USERNAME]/audio-analyzer.git [PROJECT-NAME]
+sudo git clone https://[YOUR-USERNAME]@github.com/[YOUR-USERNAME]/leque.git [PROJECT-NAME]
 ```
 
 Then, add the *Remote Upstream*, this way we can pull any merged pull-requests:
 
 ```
-cd /var/www/html/audio-analyzer/
+cd /var/www/html/leque/
 git remote add upstream https://github.com/[YOUR-USERNAME]/[REPOSITORY-NAME].git
 ```
 
@@ -105,7 +105,7 @@ sudo git submodule update
 The above two commands will update submodules.  If they are already initialized, then the latter command will suffice. Then, we need to pull the code-base into the initialized submodule directory:
 
 ```
-cd /var/www/html/audio-analyzer/
+cd /var/www/html/leque/
 git checkout -b NEW_BRANCH master
 cd [YOUR_SUBMODULE]/
 git checkout master
@@ -122,15 +122,15 @@ Change the file permission for the entire project by issuing the command:
 
 ```
 cd /var/www/html/
-sudo chown -R jeffrey:sudo audio-analyzer
+sudo chown -R jeffrey:sudo leque
 ```
 
 **Note:** change 'jeffrey' to the user account YOU use.
 
-Then, with the exception of the `.gitignore` file, ensure `/var/www/html/audio-analyzer/audio` is an empty directory, so that we can change it's ownership:
+Then, with the exception of the `.gitignore` file, ensure `/var/www/html/leque/audio` is an empty directory, so that we can change it's ownership:
 
 ```
-cd /var/www/html/audio-analyzer/
+cd /var/www/html/leque/
 sudo chown www-data:sudo audio
 ```
 
@@ -140,7 +140,7 @@ sudo chown www-data:sudo audio
 
 ```
 # Install Sphinx Engine(s)
-cd /var/www/html/audio-analyzer/pocketsphinx/sphinxbase/
+cd /var/www/html/leque/pocketsphinx/sphinxbase/
 ./autogen.sh
 sudo make install
 
@@ -184,8 +184,8 @@ Configuring `/etc/rc.local` allows bash-scripts to be run during [apache2](https
 
 ```
 ...
-# run 'bash_loader' at start-up for '/var/www/html/audio-analyzer/' application (edited by JL)
-cd /var/www/html/audio-analyzer/bash/ && ./bash_loader > /dev/null 2>&1 &
+# run 'bash_loader' at start-up for '/var/www/html/leque/' application (edited by JL)
+cd /var/www/html/leque/bash/ && ./bash_loader > /dev/null 2>&1 &
 
 exit 0
 ```
@@ -265,7 +265,7 @@ $ sudo /etc/init.d/apache2 restart
 Before translating audio files, it is possible to perform a few tests to gauge the [PocketSphinx](http://cmusphinx.sourceforge.net/wiki/tutorialpocketsphinx) translation engine.  For example, the following script tests the command `pocketsphinx_continuous` against `sample.wav` file from the *pocketsphinx* submodule:
 
 ```
-cd /var/www/html/audio-analyzer/bash/tests/
+cd /var/www/html/leque/bash/tests/
 ./test_pocketsphinx_continuous
 ```
 
@@ -274,14 +274,14 @@ cd /var/www/html/audio-analyzer/bash/tests/
 The execution of the above the script will produce a text-file containing the text translation of `sample.wav`:
 
 ```
-cd /var/www/html/audio-analyzer/audio/recording_text/
+cd /var/www/html/leque/audio/recording_text/
 pico test_sample.txt
 ```
 
 A corresponding log-file is also created:
 
 ```
-cd /var/www/html/audio-analyzer/bash/logs/
+cd /var/www/html/leque/bash/logs/
 pico log_test_pocketsphinx_continuous
 ```
 
@@ -316,20 +316,20 @@ ngram_search_fwdtree.c(xxx): TOTAL fwdtxxxx xx.xx wall x.xxx
 If *bash automation* is being implemented, information pertaining to *Translation Time* can be acquired from `log_bash_loader`:
 
 ```
-/var/www/html/audio-analyzer/bash/logs/
+/var/www/html/leque/bash/logs/
 pico log_bash_loader
 ```
 
 If `test_pocketsphinx_continuous` was executed:
 
 ```
-cd /var/www/html/audio-analyzer/bash/tests/
+cd /var/www/html/leque/bash/tests/
 ./test_pocketsphinx_continuous
 ```
 
 then, the *translation time* information can be found within `log_test_pocketsphinx_continuous`:
 
 ```
-/var/www/html/audio-analyzer/bash/logs/
+/var/www/html/leque/bash/logs/
 pico log_text_pocketsphinx_continuous
 ```
