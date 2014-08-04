@@ -1,4 +1,4 @@
-Auditory Analyzer
+LeQue
 =====================
 
 The intention of this *web-application* is to allow the visitor to provide auditory commands, which get executed on the server.  The languages used for this project includes:
@@ -11,23 +11,19 @@ The intention of this *web-application* is to allow the visitor to provide audit
 
 **Note:** Since this project is open to the public, feel free to contribute, or email jeff1evesque@yahoo.com regarding any questions.
 
-##Auditory Analyzer, written in Python & PhP
-
-###Definition:
+###Definition
 
 Speech recognition (SR) is the translation of spoken words into text.
 
 - http://en.wikipedia.org/wiki/Speech_recognition
 
-###Overview:
+###Overview
 
 This project utilizes [Flash](https://getadobe.com/flashplayer/) within the web-browser in order to access the users microphone.  When a recording is saved, it is reconfigured to a `16 bit, 16 kHz, mono` if it has a different format.  This reconfigured *wav* file, is then converted to text using [PocketSphinx](http://cmusphinx.sourceforge.net/wiki/tutorialpocketsphinx), which allows our Python scripts to parse the converted text into executable commands.  This *Bash Automation* occurs automatically, and triggered when an audio file is saved either through the web-application, or by manually saving a *wav* file into the `recording/` subdirectory.
 
-##Requirement
+##Installation
 
-###Installation
-
-####Ubuntu Server 14.04
+###Ubuntu Server 14.04
 
 Format two USB flash drives as `MS-DOS (FAT)`.  Using [UNetbootin](http://unetbootin.sourceforge.net/), make both USB drives bootable with the following ISO images:
 
@@ -44,7 +40,7 @@ During [installation](http://ubuntuserverguide.com/2014/04/how-to-install-ubuntu
 
 **Note:** If Ubuntu Server 14.04 was not bootable on the hard disk after installation, use the boot-repair-disk bootable USB, and *reinstall Grub*.
 
-####Linux Packages
+###Linux Packages
 
 The following packages need to be installed through terminal in Ubuntu:
 
@@ -66,9 +62,9 @@ sudo apt-get install swig
 sudo apt-get install python-dev
 ```
 
-###Configuration
+##Configuration
 
-####GIT
+###GIT
 
 Since we installed GIT earlier, we have to remember to configure our GIT user.  Only change the values within the double quotes (remove the quotes for the email):
 
@@ -81,17 +77,17 @@ Fork this project in your GitHub account, then clone your repository:
 
 ```
 cd /var/www/html/
-sudo git clone https://[YOUR-USERNAME]@github.com/[YOUR-USERNAME]/audio-analyzer.git [PROJECT-NAME]
+sudo git clone https://[YOUR-USERNAME]@github.com/[YOUR-USERNAME]/leque.git [PROJECT-NAME]
 ```
 
 Then, add the *Remote Upstream*, this way we can pull any merged pull-requests:
 
 ```
-cd /var/www/html/audio-analyzer/
+cd /var/www/html/leque/
 git remote add upstream https://github.com/[YOUR-USERNAME]/[REPOSITORY-NAME].git
 ```
 
-#####GIT Submodule
+####GIT Submodule
 
 We need to initialize our git *submodules*:
 
@@ -105,7 +101,7 @@ sudo git submodule update
 The above two commands will update submodules.  If they are already initialized, then the latter command will suffice. Then, we need to pull the code-base into the initialized submodule directory:
 
 ```
-cd /var/www/html/audio-analyzer/
+cd /var/www/html/leque/
 git checkout -b NEW_BRANCH master
 cd [YOUR_SUBMODULE]/
 git checkout master
@@ -116,31 +112,29 @@ git status
 
 Now, commit and merge the submodule changes.
 
-####File Permission
+###File Permission
 
 Change the file permission for the entire project by issuing the command:
 
 ```
 cd /var/www/html/
-sudo chown -R jeffrey:sudo audio-analyzer
+sudo chown -R jeffrey:sudo leque
 ```
 
 **Note:** change 'jeffrey' to the user account YOU use.
 
-Then, with the exception of the `.gitignore` file, ensure `/var/www/html/audio-analyzer/audio` is an empty directory, so that we can change it's ownership:
+Then, with the exception of the `.gitignore` file, ensure `/var/www/html/leque/audio` is an empty directory, so that we can change it's ownership:
 
 ```
-cd /var/www/html/audio-analyzer/
+cd /var/www/html/leque/
 sudo chown www-data:sudo audio
 ```
 
-####Submodule Installation
-
-#####Sphinx
+###PocketSphinx
 
 ```
 # Install Sphinx Engine(s)
-cd /var/www/html/audio-analyzer/pocketsphinx/sphinxbase/
+cd /var/www/html/leque/pocketsphinx/sphinxbase/
 ./autogen.sh
 sudo make install
 
@@ -164,28 +158,26 @@ sudo mv cmusphinx-5.0-en-us.lm.dmp /usr/local/share/pocketsphinx/model/lm/
 
 More information regarding setting-up [PocketSphinx](http://cmusphinx.sourceforge.net/wiki/tutorialpocketsphinx), can be found within the [README.md](https://github.com/jeff1evesque/pocketsphinx/blob/master/README.md) file from the [jeff1evesque/pocketsphinx](https://github.com/jeff1evesque/pocketsphinx/) repository.
 
-#####Autobahn
+###Autobahn
 
 In order to allow browsers to stream audio to the server, a websocket server is needed.  This project uses [Autobahn](http://http://autobahn.ws/), an open source project that provides *WebSocket*, and *Web Application Messaging Protocols* (WAMP) protocol to achieve audio streaming.
 
 More information regarding setting-up [Autobahn](http://autobahn.ws/), and the requirements of streaming audio from the browser to the server can be found within the [README.md](https://github.com/jeff1evesque/whisper/blob/master/README.md) file from the [whisper](https://github.com/jeff1evesque/whisper) repository.
 
-####Automation
-
-#####Grunt
+###Grunt
 
 We will automate [Grunt's](https://gruntjs.com) task management, which will encompass tools such as [Sass](https://github.com/gruntjs/grunt-contrib-sass), [Uglify](https://github.com/gruntjs/grunt-contrib-uglify), [Imagemin](https://github.com/gruntjs/grunt-contrib-imagemin), and [Modernizr](https://github.com/Modernizr/grunt-modernizr).  It requires setup only once within each web-application utilizing its tools.
 
 More information regarding setting-up [Grunt](https://gruntjs.com), can be found within the [README.md](https://github.com/jeff1evesque/grunt/blob/master/README.md) file from the [Grunt](http://github.com/jeff1evesque/grunt) repository.
 
-#####Bash Scripts
+###Bash Scripts
 
 Configuring `/etc/rc.local` allows bash-scripts to be run during [apache2](https://help.ubuntu.com/10.04/serverguide/httpd.html) boot.  Since `bash_loader` loads all the required bash-scripts, all required scripts can be automated by adding the following to `/etc/rc.local`:
 
 ```
 ...
-# run 'bash_loader' at start-up for '/var/www/html/audio-analyzer/' application (edited by JL)
-cd /var/www/html/audio-analyzer/bash/ && ./bash_loader > /dev/null 2>&1 &
+# run 'bash_loader' at start-up for '/var/www/html/leque/' application (edited by JL)
+cd /var/www/html/leque/bash/ && ./bash_loader > /dev/null 2>&1 &
 
 exit 0
 ```
@@ -196,7 +188,7 @@ The above configuration may require starting [rc.local](http://www.linux.com/new
 sudo /etc/init.d/rc.local start
 ```
 
-####Boot Sequence
+###Boot Sequence
 
 This application utilizes [GRUB2](http://wiki.gentoo.org/wiki/GRUB2), a bootloader program, which allows the selection of partition (on the hard disk) to boot from.  Modifying the *grub configuration file* allows the boot sequence to change.  This is done by modifying the order of files contained within `/etc/grub.d`:
 
@@ -237,7 +229,7 @@ before booting or `c' for a command-line.
 
 **Note:** Without the above modifications, the *Ubuntu* option would preceed both *Windows 7* options (both point to the same partition).
 
-####Domain Name
+###Domain Name
 
 Webservers need to define their own server name.  Since this project utilizes [Apache2](http://httpd.apache.org/docs/2.0/) as one of its webservers, the `/etc/apache2.conf` file should include the following lines:
 
@@ -258,14 +250,14 @@ $ sudo /etc/init.d/apache2 restart
 
 **Note:** It is important to remember that `apache2.conf` will need to be adjusted when the server has a *[true identity](http://wiki.apache.org/httpd/CouldNotDetermineServerName)* (replacing the defined *localhost*).
 
-## Testing / Execution
+##Testing / Execution
 
-###Test Scripts:
+###Test Scripts
 
 Before translating audio files, it is possible to perform a few tests to gauge the [PocketSphinx](http://cmusphinx.sourceforge.net/wiki/tutorialpocketsphinx) translation engine.  For example, the following script tests the command `pocketsphinx_continuous` against `sample.wav` file from the *pocketsphinx* submodule:
 
 ```
-cd /var/www/html/audio-analyzer/bash/tests/
+cd /var/www/html/leque/bash/tests/
 ./test_pocketsphinx_continuous
 ```
 
@@ -274,14 +266,14 @@ cd /var/www/html/audio-analyzer/bash/tests/
 The execution of the above the script will produce a text-file containing the text translation of `sample.wav`:
 
 ```
-cd /var/www/html/audio-analyzer/audio/recording_text/
+cd /var/www/html/leque/audio/recording_text/
 pico test_sample.txt
 ```
 
 A corresponding log-file is also created:
 
 ```
-cd /var/www/html/audio-analyzer/bash/logs/
+cd /var/www/html/leque/bash/logs/
 pico log_test_pocketsphinx_continuous
 ```
 
@@ -316,20 +308,20 @@ ngram_search_fwdtree.c(xxx): TOTAL fwdtxxxx xx.xx wall x.xxx
 If *bash automation* is being implemented, information pertaining to *Translation Time* can be acquired from `log_bash_loader`:
 
 ```
-/var/www/html/audio-analyzer/bash/logs/
+/var/www/html/leque/bash/logs/
 pico log_bash_loader
 ```
 
 If `test_pocketsphinx_continuous` was executed:
 
 ```
-cd /var/www/html/audio-analyzer/bash/tests/
+cd /var/www/html/leque/bash/tests/
 ./test_pocketsphinx_continuous
 ```
 
 then, the *translation time* information can be found within `log_test_pocketsphinx_continuous`:
 
 ```
-/var/www/html/audio-analyzer/bash/logs/
+/var/www/html/leque/bash/logs/
 pico log_text_pocketsphinx_continuous
 ```
