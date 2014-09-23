@@ -231,7 +231,7 @@ before booting or `c' for a command-line.
 
 ###Domain Name
 
-Webservers need to define their own server name.  Since this project utilizes [Apache2](http://httpd.apache.org/docs/2.0/) as one of its webservers, the `/etc/apache2.conf` file should include the following lines:
+Webservers need to define their own server name.  Since this project utilizes [Apache2](http://httpd.apache.org/docs/2.0/) as one of its webservers, the `/etc/apache2/apache2.conf` file should include the following lines:
 
 ```
 ...
